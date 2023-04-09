@@ -1,0 +1,149 @@
+.footer {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 400;
+}
+
+.footer__block {
+  margin-top: 60px;
+  margin-bottom: 36px;
+  display: flex;
+  justify-content: space-between;
+  gap: 87px;
+}
+
+.footer__name {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.footer__title {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.footer__list {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.footer__item {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer__inputs {
+  display: flex;
+  gap: 0;
+
+}
+
+.footer__input-email,
+.footer__input-image {
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+
+.footer__input-email {
+  width: 169px;
+  padding-left: 16px;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-radius: 4px 0 0 4px;
+}
+
+.footer__input-email::placeholder {
+  line-height: 24px;
+  color: #FAFAFA;
+}
+
+.footer__input-image {
+  width: 48px;
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-radius: 0 4px 4px 0;
+  background-position: center center;
+  background-image: url("../../resources/img/icons/send-footer.png");
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.footer__item address {
+  font-style: normal;
+}
+
+.footer__item-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer__support {
+  min-width: 175px;
+}
+
+.footer__footer__block-subscribe {
+  width: 217px;
+}
+
+.footer__account {
+  min-width: 123px;
+}
+
+.footer__useful {
+  min-width: 110px;
+}
+
+.footer__apps-text {
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .4);
+}
+
+.footer__item-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__img-qrcode {
+  width: 80px;
+  height: 80px;
+}
+
+.footer__icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__copyright {
+  padding-top: 16px;
+  padding-bottom: 24px;
+  border-top: 1px solid rgba(255, 255, 255, .4);
+  text-align: center;
+  color: rgba(255, 255, 255, .4);
+}
+
+.footer__copyright::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../resources/img/icons/icon-copyright.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  opacity: 0.4;
+  vertical-align: middle;
+  margin-right: 10px;
+}

@@ -1,8 +1,17 @@
-import Header from "../header/Header";
+import HeaderTop from "../header/headerTop/HeaderTop"
+import HeaderMenu from "../header/headerMenu/HeaderMenu";
+import Footer from "../footer/Footer";
 
 const App = () => {
   return (
-    <Header />
+    <>
+      <header className="header">
+        <HeaderTop />
+        <HeaderMenu />
+      </header>
+
+      <Footer />
+    </>
   )
 }
 

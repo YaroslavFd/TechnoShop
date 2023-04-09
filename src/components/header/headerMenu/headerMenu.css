@@ -1,0 +1,66 @@
+.header-menu {
+  height: 92px;
+}
+
+.header-menu__container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu__name {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-menu__menu-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.header-menu__menu-item:nth-child(n+2) {
+  margin-left: 48px;
+}
+
+.header-menu__menu-link {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.header-menu__block-icons {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu__input {
+  width: 219px;
+  height: 38px;
+  padding-left: 22px;
+  border: none;
+}
+
+.header-menu__input-loupe {
+  width: 24px;
+  height: 38px;
+  border: none;
+  background-position: calc(100%) center !important;
+  background-image: url("../../../resources/img/icons/loupe-header.png");
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.header-menu__icons-heart {
+  margin-left: 30px;
+}
+
+.header-menu__icons-cart,
+.header-menu__icons-user {
+  margin-left: 16px;
+}

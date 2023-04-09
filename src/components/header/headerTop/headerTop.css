@@ -1,0 +1,50 @@
+.header {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 400;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+/* =============================================== header-top */
+.header-top__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.header-top__ad {
+  display: flex;
+  align-items: center;
+}
+
+.header-top__ad-link {
+  margin-left: 8px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+/* еще подумать, как распределить блоки */
+.header-top__language {
+  margin-left: 230px;
+  cursor: pointer;
+}
+
+.header-top__language::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url('../../../resources/img/icons/arrow-header.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.header-top__language-link {
+  text-decoration: none;
+  color: #ffffff;
+}
