@@ -1,9 +1,14 @@
-import Header from "../header/Header";
+import Login from '../../pages/Login';
+import Header from '../header/Header';
+import '../../style/fonts.css';
 
 const App = () => {
   return (
-    <Header />
-  )
-}
+    <>
+      <Header />
+      <Login />
+    </>
+  );
+};
 
 export default App;

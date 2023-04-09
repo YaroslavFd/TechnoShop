@@ -1,0 +1,27 @@
+.dropdown {
+    position: absolute;
+    padding: 18px 12px 10px 20px;
+    right: 0;
+    top: 70px;
+    background-color: rgba(155, 143, 157, 0.9);
+    backdrop-filter: blur(5px);
+    border-radius: 4px;
+}
+
+.dropdown__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.dropdown__link:nth-child(n+2) {
+    margin-top: 13px;
+}
+
+.dropdown__img {
+    margin-right: 18px;
+    width: 32px;
+}

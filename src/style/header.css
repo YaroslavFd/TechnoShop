@@ -1,0 +1,138 @@
+.header {
+  font-family: Poppins, Arial, sans-serif;
+  font-weight: 400;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+/* =============================================== header-top */
+.header-top__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.header-top__ad {
+  display: flex;
+  align-items: center;
+}
+
+.header-top__ad-link {
+  margin-left: 8px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+/* еще подумать, как распределить блоки */
+.header-top__language {
+  margin-left: 230px;
+  width: 78px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  color: #ffffff;
+  border: none;
+  background-color: transparent;
+  background-position: calc(100%) center !important;
+  background-image: url("../images/icons/arrow-header.png");
+  background-repeat: no-repeat;
+}
+
+/* ниже стилизация выпадающего списка select */
+.header-top__language * {
+  background-color: #000000;
+}
+
+/* ниже оставила заклмментированный код на случай возврата к ссылке */
+/* .header-top__language::after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('../images/icons/arrow-header.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px;
+    vertical-align: middle;
+    margin-left: 8px;
+} */
+
+/* .header-top__language-link {
+    text-decoration: none;
+    color: #ffffff;
+} */
+
+/* =============================================== header-menu */
+.header-menu {
+  height: 92px;
+}
+
+.header-menu__container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu__name {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.header-menu__menu-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.header-menu__menu-item:nth-child(n+2) {
+  margin-left: 48px;
+}
+
+.header-menu__menu-link {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.header-menu__block-user {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu__input {
+  width: 219px;
+  height: 38px;
+  padding-left: 22px;
+  border: none;
+}
+
+.header-menu__input-loupe {
+  width: 24px;
+  height: 38px;
+  border: none;
+  background-position: calc(100%) center !important;
+  background-image: url("../images/icons/loupe-header.png");
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.header-menu__icons {
+  display: flex;
+}
+
+.header-menu__icons-heart {
+  margin-left: 30px;
+}
+
+.header-menu__icons-cart,
+.header-menu__icons-user {
+  margin-left: 16px;
+}

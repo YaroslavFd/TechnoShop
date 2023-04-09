@@ -1,0 +1,22 @@
+.page-menu {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.breadcrumbs {
+  display: flex;
+  list-style: none;
+  /* padding-right: 15px; */
+}
+
+ul.breadcrumbs li+li:before {
+  padding: 8px;
+  color: #7D8184;
+  content: "/\00a0";
+}
+
+.breadcrumbs__link {
+  text-decoration: none;
+  color: #7D8184;
+}

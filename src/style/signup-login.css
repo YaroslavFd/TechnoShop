@@ -1,0 +1,86 @@
+.login {
+  height: 780px;
+  margin-top: 60px;
+  margin-bottom: 140px;
+  font-family: Poppins, Arial, sans-serif;
+  background-image: url('../resources/img/AccountImgSide.jpg');
+  background-repeat: no-repeat;
+}
+
+.login__container {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.login__title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.login__subtitle {
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+
+.login__block {
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+}
+
+.button__google {
+  margin-top: 16px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button__google img {
+  margin-right: 16px;
+}
+
+.login__box,
+.button__google {
+  width: 100%;
+  text-align: center;
+}
+
+.login__box {
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__box-text {
+  margin: 0;
+}
+
+.login__box-link {
+  margin-left: 16px;
+}
+
+.form__buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button__login {
+  width: 143px;
+}
+
+.forget-password {
+  text-decoration: none;
+}
