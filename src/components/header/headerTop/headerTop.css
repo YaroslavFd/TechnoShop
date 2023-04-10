@@ -1,7 +1,7 @@
 .header {
   font-family: Poppins, Arial, sans-serif;
   font-weight: 400;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 /* =============================================== header-top */
@@ -36,7 +36,7 @@
   display: inline-block;
   width: 14px;
   height: 14px;
-  background-image: url('../../../resources/img/icons/arrow-header.png');
+  background-image: url('/public/img/icons/arrow-header.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 14px;

@@ -22,7 +22,7 @@
   list-style-type: none;
 }
 
-.header-menu__menu-item:nth-child(n+2) {
+.header-menu__menu-item:nth-child(n + 2) {
   margin-left: 48px;
 }
 
@@ -50,7 +50,7 @@
   height: 38px;
   border: none;
   background-position: calc(100%) center !important;
-  background-image: url("../../../resources/img/icons/loupe-header.png");
+  background-image: url('/public/img/icons/loupe-header.png');
   background-size: 24px 24px;
   background-repeat: no-repeat;
   cursor: pointer;

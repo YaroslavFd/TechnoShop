@@ -38,7 +38,6 @@
 .footer__inputs {
   display: flex;
   gap: 0;
-
 }
 
 .footer__input-email,
@@ -61,7 +60,7 @@
 
 .footer__input-email::placeholder {
   line-height: 24px;
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 .footer__input-image {
@@ -71,7 +70,7 @@
   border-bottom: 1px solid #ffffff;
   border-radius: 0 4px 4px 0;
   background-position: center center;
-  background-image: url("../../resources/img/icons/send-footer.png");
+  background-image: url('/public/img/icons/send-footer.png');
   background-size: 24px 24px;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -107,7 +106,7 @@
   font-size: 12px;
   line-height: 18px;
   font-weight: 500;
-  color: rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer__item-box {
@@ -129,9 +128,9 @@
 .footer__copyright {
   padding-top: 16px;
   padding-bottom: 24px;
-  border-top: 1px solid rgba(255, 255, 255, .4);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
   text-align: center;
-  color: rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer__copyright::before {
@@ -139,7 +138,7 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url('../../resources/img/icons/icon-copyright.png');
+  background-image: url('/public/img/icons/icon-copyright.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;

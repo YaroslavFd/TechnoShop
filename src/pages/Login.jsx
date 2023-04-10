@@ -1,12 +1,14 @@
 import '../style/signup-login.css';
 import '../style/form.css';
 import '../style/button.css';
+// import heart from './heart-header.png';
 
 const Login = () => {
   return (
     <div className="wrapper">
       <main className="main">
         <section className="login">
+          <img src="/img/heart-header.png"></img>
           <div className="container login__container">
             <div className="login__block">
               <h3 className="login__title">Log in to Exclusive</h3>
