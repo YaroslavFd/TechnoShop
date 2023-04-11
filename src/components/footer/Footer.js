@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './footer.css';
 
 const Footer = () => {
@@ -58,9 +59,9 @@ const Footer = () => {
                 </a>
               </li>
               <li className="footer__item">
-                <a className="footer__item-link" href="#">
+                <Link className="footer__item-link" to="/login">
                   Login / Register
-                </a>
+                </Link>
               </li>
               <li className="footer__item">
                 <a className="footer__item-link" href="#">

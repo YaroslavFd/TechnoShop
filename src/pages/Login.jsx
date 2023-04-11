@@ -1,11 +1,24 @@
 import '../style/signup-login.css';
 import '../style/form.css';
 import '../style/button.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import accounts from '../data/accounts';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [emailInput, setEmailInput] = useState('');
   const [passwordInput, setPasswordInput] = useState('');
+  const [isLogin, setIsLogin] = useState(false);
+
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   const storedIsLogin = localStorage.getItem('isLogin');
+  //   if (storedIsLogin === 'true') {
+  //     setIsLogin(true);
+  //     navigate('/');
+  //   }
+  // }, [navigate]);
 
   const emailInputHandle = (event) => {
     setEmailInput(event.target.value);
@@ -16,10 +29,16 @@ const Login = () => {
 
   const formSubmitHandle = (event) => {
     event.preventDefault();
-    console.log(emailInput);
-    console.log(passwordInput);
-    setEmailInput('');
-    setPasswordInput('');
+
+    if (
+      accounts.some(
+        (el) => el.userName === emailInput && +el.password === +passwordInput
+      )
+    ) {
+      setIsLogin(true);
+      localStorage.setItem('isLogin', true);
+      navigate('/');
+    }
   };
 
   return (

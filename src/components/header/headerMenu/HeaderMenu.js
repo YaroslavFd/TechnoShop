@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './headerMenu.css';
 
 const HeaderMenu = () => {
@@ -10,24 +11,24 @@ const HeaderMenu = () => {
         <nav className="header-menu__menu">
           <ul className="header-menu__menu-list">
             <li className="header-menu__menu-item">
-              <a className="header-menu__menu-link" href="#">
+              <Link className="header-menu__menu-link" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="header-menu__menu-item">
-              <a className="header-menu__menu-link" href=".#">
+              <Link className="header-menu__menu-link" to="/contact">
                 Contact
-              </a>
+              </Link>
             </li>
             <li className="header-menu__menu-item">
-              <a className="header-menu__menu-link" href="#">
+              <Link className="header-menu__menu-link" to="/about">
                 About
-              </a>
+              </Link>
             </li>
             <li className="header-menu__menu-item">
-              <a className="header-menu__menu-link" href="#">
+              <Link className="header-menu__menu-link" to="/sing-up">
                 Sign Up
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
