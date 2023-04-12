@@ -1,4 +1,4 @@
-import './headerTop.css'
+import './style.css';
 
 const HeaderTop = () => {
   const style = { color: 'black' }

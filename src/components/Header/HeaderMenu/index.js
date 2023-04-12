@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './headerMenu.css';
+import './style.css';
 
 const HeaderMenu = () => {
   return (
