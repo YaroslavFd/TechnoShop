@@ -1,11 +1,11 @@
-import Wrapper from '../Wrapper';
-import Footer from '../footer/Footer';
-import Main from '../Main';
-// import Header from '../Header';
+import { Route, Routes } from 'react-router-dom';
 
+import Wrapper from '../Wrapper';
+import Footer from '../Footer';
+import Main from '../Main';
+import Header from '../Header';
 import SingUp from '../../pages/SignUp';
 import Login from '../../pages/Login';
-import { Route, Routes } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Contact from '../../pages/Contact';
 import About from '../../pages/About';
@@ -15,7 +15,7 @@ import About from '../../pages/About';
 const App = () => {
   return (
     <Wrapper>
-      {/* <Header /> */}
+      <Header />
 
       <Main>
         <h1>Main</h1>

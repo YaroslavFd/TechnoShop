@@ -1,5 +1,5 @@
-import HeaderTop from "../HeaderTop";
-import HeaderMenu from "../HeaderMenu";
+import HeaderTop from "./HeaderTop";
+import HeaderMenu from "./HeaderMenu";
 
 const Header = () => {
   return (
