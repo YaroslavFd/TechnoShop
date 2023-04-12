@@ -4,10 +4,10 @@
 * {
   box-sizing: border-box;
 }
-
 body {
   height: 100vh;
   box-sizing: border-box;
+  font-family: Poppins, Arial, sans-serif;
 }
 
 .container {
@@ -18,15 +18,11 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 .main {
   flex: 1 0 auto;
-}
-
-.footer {
-  flex: 0 0 auto;
 }
 
 .hidden {

@@ -1,20 +1,25 @@
-import HeaderMenu from '../header/headerMenu/HeaderMenu';
-import HeaderTop from '../header/headerTop/HeaderTop';
-import Footer from '../footer/Footer';
+import { Route, Routes } from 'react-router-dom';
+
+import Wrapper from '../Wrapper';
+import Footer from '../Footer';
+import Main from '../Main';
+import Header from '../Header';
 import SingUp from '../../pages/SignUp';
 import Login from '../../pages/Login';
-import { Route, Routes } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Contact from '../../pages/Contact';
 import About from '../../pages/About';
 
+
+
 const App = () => {
   return (
-    <>
-      <header className="header">
-        <HeaderTop />
-        <HeaderMenu />
-      </header>
+    <Wrapper>
+      <Header />
+
+      <Main>
+        <h1>Main</h1>
+      </Main>
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -24,8 +29,9 @@ const App = () => {
         <Route path="/about" element={<About />} />
       </Routes>
 
+
       <Footer />
-    </>
+    </Wrapper>
   );
 };
 
