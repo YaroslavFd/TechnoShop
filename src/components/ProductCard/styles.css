@@ -1,0 +1,124 @@
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__block {
+    position: relative;
+    width: 270px;
+    height: 250px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.card__img {
+    max-width: 170px;
+}
+
+.card__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 55px;
+    height: 26px;
+    padding: 4px 12px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #ffffff;
+    border-radius: 4px;
+    background-color: #DB4444;
+}
+
+.card__box {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.card__box:hover {
+    background-color: #eae7e7;
+    transition: 0.5s ease-out;
+}
+
+.card__box-heart {
+    top: 12px;
+    right: 12px;
+}
+
+.card__box-eye {
+    top: 54px;
+    right: 12px;
+}
+
+.card__title {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.card__title:hover {
+    color: #7D8184;
+    transition: 0.5s ease-out;
+}
+
+.card__price {
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.card__price_old {
+    margin-left: 12px;
+    color: #7D8184;
+    text-decoration: line-through;
+}
+
+.card__button {
+    position: absolute;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+}
+
+.card__button-img {
+    margin-right: 8px;
+}
+
+.card__rating {
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.card__rating-text {
+    margin-left: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #7D8184;
+}
