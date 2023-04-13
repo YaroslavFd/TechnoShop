@@ -1,9 +1,11 @@
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import accounts from '../data/accounts';
+
 import '../style/signup-login.css';
 import '../style/form.css';
 import '../style/button.css';
-import { useEffect, useState } from 'react';
-import accounts from '../data/accounts';
-import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [emailInput, setEmailInput] = useState('');
@@ -76,7 +78,7 @@ const Login = () => {
                 <button className="button button__login" form="form__login">
                   Log In
                 </button>
-                <a href="#" className="forget-password text-red">
+                <a href="/#" className="forget-password text-red">
                   Forget Password?
                 </a>
               </div>

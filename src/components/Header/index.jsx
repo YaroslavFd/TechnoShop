@@ -1,5 +1,5 @@
-import HeaderTop from "./HeaderTop";
-import HeaderMenu from "./HeaderMenu";
+import HeaderMenu from './HeaderMenu';
+import HeaderTop from './HeaderTop';
 
 const Header = () => {
   return (
@@ -7,7 +7,7 @@ const Header = () => {
       <HeaderTop />
       <HeaderMenu />
     </header>
-  )
-}
+  );
+};
 
 export default Header;
