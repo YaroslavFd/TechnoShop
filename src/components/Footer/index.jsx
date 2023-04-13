@@ -55,7 +55,7 @@ const Footer = () => {
             <h3 className="footer__title">Account</h3>
             <ul className="footer__list">
               <li className="footer__item">
-                <a className="footer__item-link" href="#">
+                <a className="footer__item-link" href="/#">
                   My Account
                 </a>
               </li>
@@ -65,17 +65,17 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="footer__item">
-                <a className="footer__item-link" href="#">
+                <a className="footer__item-link" href="/#">
                   Cart
                 </a>
               </li>
               <li className="footer__item">
-                <a className="footer__item-link" href="#">
+                <a className="footer__item-link" href="/#">
                   Wishlist
                 </a>
               </li>
               <li className="footer__item">
-                <a className="footer__item-link" href="#">
+                <a className="footer__item-link" href="/#">
                   Shop
                 </a>
               </li>
@@ -86,22 +86,22 @@ const Footer = () => {
             <h3 className="footer__title">Quick Link</h3>
             <ul className="footer__list">
               <li className="footer__item">
-                <a className="footer__item-link" href="#">
+                <a className="footer__item-link" href="/#">
                   Privacy Policy
                 </a>
               </li>
               <li className="footer__item">
-                <a className="footer__item-link" href="#">
+                <a className="footer__item-link" href="/#">
                   Terms Of Use
                 </a>
               </li>
               <li className="footer__item">
-                <a className="footer__item-link" href="#">
+                <a className="footer__item-link" href="/#">
                   FAQ
                 </a>
               </li>
               <li className="footer__item">
-                <a className="footer__item-link" href="#">
+                <a className="footer__item-link" href="/#">
                   Contact
                 </a>
               </li>
@@ -122,38 +122,38 @@ const Footer = () => {
                     alt="QR-code"
                   />
                   <div className="footer__item-apps">
-                    <a href="#">
+                    <a href="/#">
                       <img src="/img/GooglePlay.jpg" alt="GooglePlay" />
                     </a>
-                    <a href="#">
+                    <a href="/#">
                       <img src="/img/AppStore.jpg" alt="AppStore" />
                     </a>
                   </div>
                 </div>
               </li>
               <li className="footer__item footer__icons">
-                <a href="#">
+                <a href="/#">
                   <img
                     className="footer__icon-facebook"
                     src="/img/icons/facebook.svg"
                     alt="facebook"
                   />
                 </a>
-                <a href="#">
+                <a href="/#">
                   <img
                     className="footer__icon-twitter"
                     src="/img/icons/twitter.svg"
                     alt="twitter"
                   />
                 </a>
-                <a href="#">
+                <a href="/#">
                   <img
                     className="footer__icon-instagram"
                     src="/img/icons/instaram.svg"
                     alt="instagram"
                   />
                 </a>
-                <a href="#">
+                <a href="/#">
                   <img
                     className="footer__icon-linkedin"
                     src="/img/icons/linkedin.svg"

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+
 import './styles.css';
 
 const HeaderMenu = () => {
   return (
     <section className="header-menu">
       <div className="container header-menu__container">
-        <a className="header-menu__name" href="#">
+        <a className="header-menu__name" href="/#">
           Exclusive
         </a>
         <nav className="header-menu__menu">
@@ -43,19 +44,19 @@ const HeaderMenu = () => {
             <input className="header-menu__input-loupe" readOnly />
           </div>
           <div className="header-menu__icons">
-            <a href="#" className="header-menu__icons-heart">
+            <a href="/#" className="header-menu__icons-heart">
               <img src="/img/icons/heart-header.png" alt="heart" />
             </a>
-            <a href="#" className="header-menu__icons-cart">
+            <a href="/#" className="header-menu__icons-cart">
               <img src="/img/icons/cart-header.png" alt="cart" />
             </a>
-            <a href="#" className="header-menu__icons-user hidden">
+            <a href="/#" className="header-menu__icons-user hidden">
               <img src="/img/icons/user.png" alt="user" />
             </a>
           </div>
         </div>
         <div className="dropdown hidden">
-          <a className="dropdown__link" href="#">
+          <a className="dropdown__link" href="/#">
             <img
               className="dropdown__img"
               src="/img/icons/dropdown-user.svg"
@@ -63,7 +64,7 @@ const HeaderMenu = () => {
             />
             Manage My Account
           </a>
-          <a className="dropdown__link" href="#">
+          <a className="dropdown__link" href="/#">
             <img
               className="dropdown__img"
               src="/img/icons/dropdown-order.svg"
@@ -71,7 +72,7 @@ const HeaderMenu = () => {
             />
             My Order
           </a>
-          <a className="dropdown__link" href="#">
+          <a className="dropdown__link" href="/#">
             <img
               className="dropdown__img"
               src="/img/icons/dropdown-cancellations.svg"
@@ -79,7 +80,7 @@ const HeaderMenu = () => {
             />
             My Cancellations
           </a>
-          <a className="dropdown__link" href="#">
+          <a className="dropdown__link" href="/#">
             <img
               className="dropdown__img"
               src="/img/icons/dropdown-reviews.svg"
@@ -87,7 +88,7 @@ const HeaderMenu = () => {
             />
             My Reviews
           </a>
-          <a className="dropdown__link" href="#">
+          <a className="dropdown__link" href="/#">
             <img
               className="dropdown__img"
               src="/img/icons/dropdown-logout.svg"

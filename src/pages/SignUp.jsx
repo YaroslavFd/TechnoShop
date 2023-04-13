@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
+
 import '../style/signup-login.css';
 import '../style/form.css';
 import '../style/button.css';
-import { Link } from 'react-router-dom';
 
 const SingUp = () => {
   return (
@@ -35,7 +36,7 @@ const SingUp = () => {
                   Create Account
                 </button>
               </form>
-              <a className="text button__google" href="#">
+              <a className="text button__google" href="/#">
                 <img src="/img/icons/form-Google.svg" alt="google" /> Sign up
                 with Google
               </a>
