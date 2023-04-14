@@ -1,11 +1,26 @@
-import CountdownTimer from '../components/CountdownTimer';
 import { ProductsList } from '../components/ProductsList';
+import { Section } from '../containers/Section';
+import { PRODUCTS } from '../data/products';
 
 const Home = () => {
   return (
     <>
-      <ProductsList />
-      <CountdownTimer targetDate={new Date('April 20, 2023 23:59:00')} />
+      <Section
+        className="mb-80"
+        title="Today’s"
+        subtitle="Flash Sales"
+        withTimer
+      >
+        {/* TODOS */}
+      </Section>
+      <Section
+        className="mb-140"
+        title="This Month"
+        subtitle="Best Selling Products"
+        btnClick={() => {}}
+      >
+        <ProductsList products={PRODUCTS} />
+      </Section>
     </>
   );
 };
