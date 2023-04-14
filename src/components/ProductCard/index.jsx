@@ -1,15 +1,11 @@
 import './styles.css';
 
-const ProductCard = () => {
+const ProductCard = ({ title, price, discount, img }) => {
   return (
     <div className="card">
       <div className="card__block">
-        <img
-          className="card__img"
-          src="/img/products/2.png"
-          alt="AK-900 Wired Keyboard"
-        />
-        <div className="card__badge">-35%</div>
+        <img className="card__img" src={img} alt={title} />
+        <div className="card__badge">{`-${discount}%`}</div>
         <div className="card__box card__box-heart">
           <img
             className="card__heart"
@@ -30,10 +26,11 @@ const ProductCard = () => {
         </button>
       </div>
       <a href="/#" className="card__title">
-        AK-90 Wired Keyboard
+        {title}
       </a>
       <p className="card__price text-red">
-        $960 <span className="card__price_old">$1160</span>
+        ${price}{' '}
+        <span className="card__price_old">${price * (1 + discount / 100)}</span>
       </p>
       <div className="card__rating">
         <svg

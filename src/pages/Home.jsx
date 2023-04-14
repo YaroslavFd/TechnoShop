@@ -1,12 +1,11 @@
 import CountdownTimer from '../components/CountdownTimer';
-import ProductCard from '../components/ProductCard';
+import { ProductsList } from '../components/ProductsList';
 
 const Home = () => {
-  const targetDate = new Date('April 20, 2023 23:59:00');
   return (
     <>
-      <ProductCard />
-      <CountdownTimer targetDate={targetDate} />
+      <ProductsList />
+      <CountdownTimer targetDate={new Date('April 20, 2023 23:59:00')} />
     </>
   );
 };
