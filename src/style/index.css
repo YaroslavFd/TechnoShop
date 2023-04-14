@@ -54,3 +54,28 @@ body {
   line-height: 24px;
   color: #DB4444;
 }
+
+
+.d-flex {
+  display: flex;
+}
+
+.ml-87 {
+  margin-left: 87px;
+}
+
+.mr-87 {
+  margin-right: 87px;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.mb-140 {
+  margin-bottom: 140px;
+}

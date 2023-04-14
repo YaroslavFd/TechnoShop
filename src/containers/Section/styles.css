@@ -1,0 +1,29 @@
+.section__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.subtitle-red {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #DB4444;
+}
+
+.section__subtitle {
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+.section__subtitle::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 20px;
+    background-color: #DB4444;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 16px;
+}
