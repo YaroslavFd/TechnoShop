@@ -1,0 +1,98 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+  margin-left: 45px;
+}
+
+.slider-first {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-image: url('/public/img/promo-phone.jpg');
+  background-repeat: no-repeat;
+  background-position: 100% 160%;
+  overflow: hidden;
+}
+
+.slider-first__blocks {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-first__block {
+  min-width: 100%;
+  max-width: 100%;
+  padding: 58px 0 0 64px;
+  color: #ffffff;
+}
+
+.slider-first__subtitle {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  font-size: 16px;
+}
+
+.slider-first__image {
+  margin-right: 24px;
+}
+
+.slider-first__title {
+  margin: 0;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 60px;
+}
+
+.slider-first__shop {
+  position: relative;
+  height: 28px;
+  margin: 0;
+  margin-top: 22px;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  text-decoration: none;
+}
+
+.slider-first__shop::after {
+  content: url('/public/img/icons/promo-arrow-white.svg');
+  position: absolute;
+  width: 17px;
+  height: 14px;
+  top: 3px;
+  right: -30px;
+}
+
+.slider-first__shop:hover {
+  transform: scale(1.03);
+}
+
+.slider__dots {
+  position: absolute;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  right: 0;
+  left: 0;
+  bottom: 12px;
+}
+
+.slider__dots_style {
+  height: 12px;
+  width: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.dot-active {
+  background-color: #db4444;
+  border: 2px solid #ffffff;
+}
