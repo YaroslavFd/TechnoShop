@@ -1,0 +1,33 @@
+.today__timer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  align-self: flex-start;
+}
+
+.today__timer-text {
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.today__timer-digit {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 30px;
+}
+
+.today__timer-divider {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.today__timer-dot {
+  width: 4px;
+  height: 4px;
+  background-color: #E07575;
+  border-radius: 100%;
+}
