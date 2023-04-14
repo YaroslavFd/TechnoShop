@@ -6,3 +6,8 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+.button:hover {
+    background-color: #E07575;
+    transition: 0.5s ease-out;
+}

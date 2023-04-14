@@ -29,7 +29,6 @@
 }
 
 .account__munu-link {
-    text-decoration: none;
     font-size: 16px;
     line-height: 24px;
     color: #7D8184;
@@ -43,7 +42,6 @@
 }
 
 .account__profile-title {
-    margin: 0;
     font-weight: 500;
     font-size: 20px;
     line-height: 28px;
@@ -74,10 +72,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
-
-.account__password-title {
-    margin: 0;
 }
 
 .account__password-input {
