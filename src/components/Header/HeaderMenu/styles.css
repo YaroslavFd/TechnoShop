@@ -12,7 +12,7 @@
 .header-menu__name {
   font-size: 24px;
   line-height: 24px;
-  font-weight: 700; 
+  font-weight: 700;
   text-decoration: none;
   color: inherit;
 }
@@ -33,7 +33,7 @@
   color: #000000;
 }
 
-.header-menu__block-icons {
+.header-menu__block-user {
   display: flex;
   align-items: center;
 }
@@ -42,6 +42,7 @@
   width: 219px;
   height: 38px;
   padding-left: 22px;
+  font-size: 12px;
   border: none;
 }
 

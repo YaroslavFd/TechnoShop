@@ -6,6 +6,8 @@
 
 /* =============================================== header-top */
 .header-top__container {
+  padding-top: 12px;
+  padding-bottom: 12px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -13,7 +15,7 @@
   line-height: 21px;
 }
 
-.header-top__ad { 
+.header-top__ad {
   display: flex;
   align-items: center;
 }
@@ -23,15 +25,36 @@
   font-weight: 600;
   line-height: 24px;
   color: #ffffff;
+  text-decoration: underline;
+}
+
+.header-top__ad-link:hover {
+  text-decoration: none;
 }
 
 /* еще подумать, как распределить блоки */
 .header-top__language {
   margin-left: 230px;
+  width: 78px;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  color: #ffffff;
+  border: none;
+  background-color: transparent;
+  background-position: calc(100%) center !important;
+  background-image: url("/public/img/icons/arrow-header.png");
+  background-repeat: no-repeat;
 }
 
-.header-top__language::after {
+/* ниже стилизация выпадающего списка select */
+.header-top__language * {
+  background-color: #000000;
+}
+
+/* .header-top__language::after {
   content: '';
   display: inline-block;
   width: 14px;
@@ -47,4 +70,4 @@
 .header-top__language-link {
   text-decoration: none;
   color: #ffffff;
-}
+} */

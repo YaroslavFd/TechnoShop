@@ -79,7 +79,7 @@ const Login = () => {
                   Log In
                 </button>
                 <a href="/#" className="forget-password text-red">
-                  Forget Password?
+                  Forgot Password?
                 </a>
               </div>
             </div>

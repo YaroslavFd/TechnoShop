@@ -41,8 +41,8 @@ const SingUp = () => {
                 with Google
               </a>
               <div className="login__box">
-                <p className="text login__box-text">Already have account?</p>
-                <Link to="/login" className="text login__box-link">
+                <p className="login__box-text">Already have account?</p>
+                <Link to="/login" className="login__box-link">
                   Log in
                 </Link>
               </div>
