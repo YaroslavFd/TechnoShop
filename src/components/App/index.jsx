@@ -2,11 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Main from '../../containers/Main';
 import Wrapper from '../../containers/Wrapper';
-import About from '../../pages/About';
-import Contact from '../../pages/Contact';
-import Home from '../../pages/Home';
-import Login from '../../pages/Login';
-import SingUp from '../../pages/SignUp';
+import { About, Contact, Home, Login, SingUp } from '../../pages';
 import Footer from '../Footer';
 import Header from '../Header';
 

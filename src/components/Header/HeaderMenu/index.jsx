@@ -1,35 +1,55 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import './styles.css';
 
 const HeaderMenu = () => {
+  const activeStyle = (isActive) => {
+    return { borderBottom: isActive ? '1px solid #7D8184' : '' };
+  };
+
   return (
     <section className="header-menu">
       <div className="container header-menu__container">
-        <a className="header-menu__name" href="/#">
+        <Link className="header-menu__name" to="/">
           Exclusive
-        </a>
+        </Link>
         <nav className="header-menu__menu">
           <ul className="header-menu__menu-list">
             <li className="header-menu__menu-item">
-              <Link className="header-menu__menu-link" to="/">
+              <NavLink
+                className="header-menu__menu-link"
+                to="/"
+                style={({ isActive }) => activeStyle(isActive)}
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="header-menu__menu-item">
-              <Link className="header-menu__menu-link" to="/contact">
+              <NavLink
+                className="header-menu__menu-link"
+                to="/contact"
+                style={({ isActive }) => activeStyle(isActive)}
+              >
                 Contact
-              </Link>
+              </NavLink>
             </li>
             <li className="header-menu__menu-item">
-              <Link className="header-menu__menu-link" to="/about">
+              <NavLink
+                className="header-menu__menu-link"
+                to="/about"
+                style={({ isActive }) => activeStyle(isActive)}
+              >
                 About
-              </Link>
+              </NavLink>
             </li>
             <li className="header-menu__menu-item">
-              <Link className="header-menu__menu-link" to="/sing-up">
+              <NavLink
+                className="header-menu__menu-link"
+                to="/sing-up"
+                style={({ isActive }) => activeStyle(isActive)}
+              >
                 Sign Up
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>

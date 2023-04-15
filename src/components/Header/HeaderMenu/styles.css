@@ -39,7 +39,7 @@
   width: 100%;
   display: block;
   border-bottom: 1px solid #7D8184;
-  bottom: 0;
+  bottom: -1px;
 }
 
 .header-menu__block-user {
