@@ -50,7 +50,7 @@ const HeaderMenu = () => {
             <a href="/#" className="header-menu__icons-cart">
               <img src="/img/icons/cart-header.png" alt="cart" />
             </a>
-            <a href="/#" className="header-menu__icons-user hidden">
+            <a href="/#" className="header-menu__icons-user">
               <img src="/img/icons/user.png" alt="user" />
             </a>
           </div>

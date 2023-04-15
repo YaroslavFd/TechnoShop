@@ -3,7 +3,7 @@
   margin-top: 60px;
   margin-bottom: 140px;
   font-family: Poppins, Arial, sans-serif;
-  background-image: url('../../public/img/AccountImgSide.jpg');
+  background-image: url('/public/img/AccountImgSide.jpg');
   background-repeat: no-repeat;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .button__google:hover {
-  color: #7D8184;
+  color: #7d8184;
   transition: 0.5s ease-out;
 }
 
@@ -68,7 +68,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #7D8184;
+  color: #7d8184;
 }
 
 .login__box-link {
@@ -76,7 +76,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #7D8184;
+  color: #7d8184;
 }
 
 .forget-password:hover {
@@ -92,4 +92,16 @@
 
 .button__login {
   width: 143px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.form__input {
+  padding: 7px 0;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
 }

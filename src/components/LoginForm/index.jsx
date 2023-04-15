@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import accounts from '../../data/accounts';
 
-// import '../../style/signup-login.css';
-import '../../style/form.css';
 import '../../style/button.css';
+import './styles.css';
 
 const LoginForm = () => {
   const [emailInput, setEmailInput] = useState('');
