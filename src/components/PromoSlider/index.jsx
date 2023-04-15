@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import promoItems from '../../data/promoItems';
+
 import './styles.css';
 
 const PromoSlider = () => {
@@ -9,39 +11,16 @@ const PromoSlider = () => {
     setActiveSlide(index);
   };
 
-  const sliderItems = [
-    {
-      subtitle: 'iPhone 14 Series',
-      title: 'Up to 10% off Vouche',
-    },
-    {
-      subtitle: 'iPhone 15 Series',
-      title: 'Up to 10% off Vouche',
-    },
-    {
-      subtitle: 'iPhone 16 Series',
-      title: 'Up to 10% off Vouche',
-    },
-    {
-      subtitle: 'iPhone 17 Series',
-      title: 'Up to 10% off Vouche',
-    },
-    {
-      subtitle: 'iPhone 18 Series',
-      title: 'Up to 10% off Vouche',
-    },
-  ];
-
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide(
-        activeSlide === sliderItems.length - 1 ? 0 : activeSlide + 1
+        activeSlide === promoItems.length - 1 ? 0 : activeSlide + 1
       );
-    }, 5000);
+    }, 7000);
     return () => {
       clearInterval(interval);
     };
-  }, [activeSlide, sliderItems.length]);
+  }, [activeSlide]);
 
   return (
     <div className="slider">
@@ -52,7 +31,7 @@ const PromoSlider = () => {
             transform: `translateX(-${activeSlide * 100}%)`,
           }}
         >
-          {sliderItems.map((item, index) => (
+          {promoItems.map((item, index) => (
             <div key={index} className="slider-first__block">
               <h3 className="slider-first__subtitle">
                 <img
@@ -71,7 +50,7 @@ const PromoSlider = () => {
         </div>
       </div>
       <div className="slider__dots">
-        {sliderItems.map((dot, index) => (
+        {promoItems.map((_, index) => (
           <span
             key={index}
             className={`slider__dots_style ${
