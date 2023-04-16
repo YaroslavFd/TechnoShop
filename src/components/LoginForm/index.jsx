@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 import accounts from '../../data/accounts';
 
-import '../../style/button.css';
 import './styles.css';
 
 const LoginForm = () => {
@@ -70,15 +69,15 @@ const LoginForm = () => {
               onChange={passwordInputHandle}
               value={passwordInput}
             />
+            <div className="form__buttons">
+              <button className="button button__login" form="form__login">
+                Log In
+              </button>
+              <a href="/#" className="forget-password text-red">
+                Forgot Password?
+              </a>
+            </div>
           </form>
-          <div className="form__buttons">
-            <button className="button button__login" form="form__login">
-              Log In
-            </button>
-            <a href="/#" className="forget-password text-red">
-              Forgot Password?
-            </a>
-          </div>
         </div>
       </div>
     </section>

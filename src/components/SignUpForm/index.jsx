@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import '../../style/button.css';
 import './style.css';
 
 const SignUpForm = () => {
