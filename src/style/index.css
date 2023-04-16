@@ -150,4 +150,29 @@ body {
 .button:hover {
   background-color: #e07575;
   transition: 0.5s ease-out;
+  color: #db4444;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.ml-87 {
+  margin-left: 87px;
+}
+
+.mr-87 {
+  margin-right: 87px;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.mb-140 {
+  margin-bottom: 140px;
 }
