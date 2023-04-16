@@ -52,9 +52,129 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #DB4444;
+  color: #db4444;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.form__input {
+  padding: 7px 0;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.form__buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login {
+  height: 780px;
+  margin-top: 60px;
+  margin-bottom: 140px;
+  font-family: Poppins, Arial, sans-serif;
+  background-image: url('/public/img/AccountImgSide.jpg');
+  background-repeat: no-repeat;
+}
+
+.login__container {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.login__title {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.login__subtitle {
+  margin-bottom: 48px;
+}
+
+.login__block {
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__box {
+  width: 100%;
+  text-align: center;
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__box-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7d8184;
+}
+
+.login__box-link {
+  margin-left: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7d8184;
+}
+
+.button__login {
+  width: 143px;
+}
+
+/* нужно будет вынести стили в компонент Button */
+
+.button {
+  padding: 16px 48px;
+  background-color: #DB4444;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #E07575;
+  transition: 0.5s ease-out;
+}
+
+.banner__button {
+  background-color: #00FF66;
+}
+
+.banner__button:hover {
+  background-color: #A0BCE0;
+  transition: 0.5s ease-out;
+}
+
+.button__white {
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #7D8184;
+}
+
+.button__white:hover {
+  color: #7D8184;
+  background-color: #ffffff;
+  transition: 0.5s ease-out;
+}
 
 .d-flex {
   display: flex;

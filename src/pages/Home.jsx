@@ -1,3 +1,4 @@
+import Banner from '../components/Banner';
 import { ProductsList } from '../components/ProductsList';
 import ProductsSlider from '../components/ProductsSlider';
 import { Section } from '../containers/Section';
@@ -23,6 +24,10 @@ const Home = () => {
         <ProductsSlider>
           <ProductsList products={PRODUCTS} />
         </ProductsSlider>
+      </Section>
+
+      <Section className="banner">
+        <Banner />
       </Section>
     </>
   );
