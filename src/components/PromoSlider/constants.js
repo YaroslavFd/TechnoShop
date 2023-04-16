@@ -1,4 +1,4 @@
-const promoItems = [
+export const PROMO_ITEMS = [
   {
     subtitle: 'iPhone 14 Series',
     title: 'Up to 10% off Vouche',
@@ -20,5 +20,3 @@ const promoItems = [
     title: 'Up to 10% off Vouche',
   },
 ];
-
-export default promoItems;

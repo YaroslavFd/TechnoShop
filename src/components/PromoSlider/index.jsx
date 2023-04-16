@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import promoItems from '../../data/promoItems';
+import { PROMO_ITEMS } from './constants';
 
 import './styles.css';
 
@@ -14,7 +14,7 @@ const PromoSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide(
-        activeSlide === promoItems.length - 1 ? 0 : activeSlide + 1
+        activeSlide === PROMO_ITEMS.length - 1 ? 0 : activeSlide + 1
       );
     }, 7000);
     return () => {
@@ -31,7 +31,7 @@ const PromoSlider = () => {
             transform: `translateX(-${activeSlide * 100}%)`,
           }}
         >
-          {promoItems.map((item, index) => (
+          {PROMO_ITEMS.map((item, index) => (
             <div key={index} className="slider-first__block">
               <h3 className="slider-first__subtitle">
                 <img
@@ -50,7 +50,7 @@ const PromoSlider = () => {
         </div>
       </div>
       <div className="slider__dots">
-        {promoItems.map((_, index) => (
+        {PROMO_ITEMS.map((_, index) => (
           <span
             key={index}
             className={`slider__dots_style ${
