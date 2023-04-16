@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import './styles.css';
 
@@ -6,30 +6,30 @@ const HeaderMenu = () => {
   return (
     <section className="header-menu">
       <div className="container header-menu__container">
-        <a className="header-menu__name" href="/#">
+        <Link className="header-menu__name" to="/">
           Exclusive
-        </a>
+        </Link>
         <nav className="header-menu__menu">
           <ul className="header-menu__menu-list">
             <li className="header-menu__menu-item">
-              <Link className="header-menu__menu-link" to="/">
+              <NavLink className="header-menu__menu-link" to="/">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="header-menu__menu-item">
-              <Link className="header-menu__menu-link" to="/contact">
+              <NavLink className="header-menu__menu-link" to="/contact">
                 Contact
-              </Link>
+              </NavLink>
             </li>
             <li className="header-menu__menu-item">
-              <Link className="header-menu__menu-link" to="/about">
+              <NavLink className="header-menu__menu-link" to="/about">
                 About
-              </Link>
+              </NavLink>
             </li>
             <li className="header-menu__menu-item">
-              <Link className="header-menu__menu-link" to="/sing-up">
+              <NavLink className="header-menu__menu-link" to="/sing-up">
                 Sign Up
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
