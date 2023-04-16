@@ -1,4 +1,5 @@
 import { ProductsList } from '../components/ProductsList';
+import ProductsSlider from '../components/ProductsSlider';
 import { Section } from '../containers/Section';
 import { PRODUCTS } from '../data/products';
 
@@ -19,7 +20,9 @@ const Home = () => {
         subtitle="Best Selling Products"
         btnClick={() => {}}
       >
-        <ProductsList products={PRODUCTS} />
+        <ProductsSlider>
+          <ProductsList products={PRODUCTS} />
+        </ProductsSlider>
       </Section>
     </>
   );

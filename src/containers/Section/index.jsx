@@ -1,4 +1,8 @@
+import React, { useContext } from 'react';
+
+import { Context } from '../../components/Context';
 import CountdownTimer from '../../components/CountdownTimer';
+import SliderArrows from '../../components/UI/SliderArrows';
 
 import './styles.css';
 
@@ -10,6 +14,8 @@ export const Section = ({
   withTimer,
   btnClick,
 }) => {
+  // const { handleNextSlide, handlePrevSlide } = useContext(Context);
+
   return (
     <section className={className}>
       <div className="container">
@@ -31,6 +37,10 @@ export const Section = ({
               View All
             </button>
           )}
+          <SliderArrows
+          // prevSlide={handlePrevSlide}
+          // nextSlide={handleNextSlide}
+          />
         </div>
         {children}
       </div>
