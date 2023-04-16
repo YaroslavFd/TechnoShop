@@ -1,3 +1,4 @@
+import Banner from '../components/Banner';
 import { ProductsList } from '../components/ProductsList';
 import { Section } from '../containers/Section';
 import { PRODUCTS } from '../data/products';
@@ -20,6 +21,10 @@ const Home = () => {
         btnClick={() => {}}
       >
         <ProductsList products={PRODUCTS} />
+      </Section>
+
+      <Section className="banner">
+        <Banner />
       </Section>
     </>
   );
