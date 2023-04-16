@@ -3,10 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import './styles.css';
 
 const HeaderMenu = () => {
-  const activeStyle = (isActive) => {
-    return { borderBottom: isActive ? '1px solid #7D8184' : '' };
-  };
-
   return (
     <section className="header-menu">
       <div className="container header-menu__container">
@@ -16,38 +12,22 @@ const HeaderMenu = () => {
         <nav className="header-menu__menu">
           <ul className="header-menu__menu-list">
             <li className="header-menu__menu-item">
-              <NavLink
-                className="header-menu__menu-link"
-                to="/"
-                style={({ isActive }) => activeStyle(isActive)}
-              >
+              <NavLink className="header-menu__menu-link" to="/">
                 Home
               </NavLink>
             </li>
             <li className="header-menu__menu-item">
-              <NavLink
-                className="header-menu__menu-link"
-                to="/contact"
-                style={({ isActive }) => activeStyle(isActive)}
-              >
+              <NavLink className="header-menu__menu-link" to="/contact">
                 Contact
               </NavLink>
             </li>
             <li className="header-menu__menu-item">
-              <NavLink
-                className="header-menu__menu-link"
-                to="/about"
-                style={({ isActive }) => activeStyle(isActive)}
-              >
+              <NavLink className="header-menu__menu-link" to="/about">
                 About
               </NavLink>
             </li>
             <li className="header-menu__menu-item">
-              <NavLink
-                className="header-menu__menu-link"
-                to="/sing-up"
-                style={({ isActive }) => activeStyle(isActive)}
-              >
+              <NavLink className="header-menu__menu-link" to="/sing-up">
                 Sign Up
               </NavLink>
             </li>
