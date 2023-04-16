@@ -1,4 +1,4 @@
-import CountdownTimer from '../../components/CountdownTimer';
+import SalesTimer from '../../components/Timer/SalesTimer';
 
 import './styles.css';
 
@@ -18,9 +18,7 @@ export const Section = ({
           {subtitle && withTimer && (
             <div className="d-flex align-center">
               <h2 className="section__title-text title mr-87">{subtitle}</h2>
-              <CountdownTimer
-                targetDate={new Date('April 20, 2023 23:59:00')}
-              />
+              <SalesTimer targetDate={new Date('April 20, 2023 23:59:00')} />
             </div>
           )}
           {subtitle && !withTimer && (
