@@ -1,6 +1,6 @@
 import Banner from '../components/Banner';
 import { ProductsList } from '../components/ProductsList';
-import Servies from '../components/Servies';
+import Services from '../components/Services';
 import { Section } from '../containers/Section';
 import { PRODUCTS } from '../data/products';
 
@@ -28,7 +28,7 @@ const Home = () => {
         <Banner />
       </Section>
       <Section>
-        <Servies />
+        <Services />
       </Section>
     </>
   );

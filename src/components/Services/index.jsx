@@ -1,6 +1,6 @@
 import './styles.css';
 
-const Servies = () => {
+const Services = () => {
   return (
     <div className="servies__box">
       <div className="servies__block">
@@ -36,4 +36,4 @@ const Servies = () => {
   );
 };
 
-export default Servies;
+export default Services;
