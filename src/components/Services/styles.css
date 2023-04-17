@@ -1,22 +1,22 @@
-.servies__box {
+.services__box {
   margin-bottom: 140px;
   display: flex;
   justify-content: center;
   gap: 95px;
 }
 
-.servies__block {
+.services__block {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.servies__img {
+.services__img {
   width: 80px;
   height: 80px;
 }
 
-.servies__title {
+.services__title {
   margin-top: 24px;
   font-weight: 600;
   font-size: 20px;
@@ -24,7 +24,7 @@
   text-transform: uppercase;
 }
 
-.servies__text {
+.services__text {
   margin-top: 8px;
   font-weight: 400;
   font-size: 14px;
