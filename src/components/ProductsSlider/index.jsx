@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
-import { Context } from '../Context';
+import { Section } from '../../containers/Section';
+import { ProductsList } from '../ProductsList';
 
 import './style.css';
 
-const ProductsSlider = ({ children }) => {
+const ProductsSlider = ({ products, className, title, subtitle }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const numSlides = children.props.products.length;
+  const numSlides = products.length;
 
   const handleNextSlide = () =>
     setCurrentSlide((prevSlide) => (prevSlide + 1) % numSlides);
@@ -15,25 +16,26 @@ const ProductsSlider = ({ children }) => {
     setCurrentSlide((prevSlide) => (prevSlide - 1 + numSlides) % numSlides);
 
   return (
-    <Context.Provider value={{ handleNextSlide, handlePrevSlide }}>
-      <div className="window">
+    <Section
+      withSlider={true}
+      prevSlide={handlePrevSlide}
+      nextSlide={handleNextSlide}
+      className={className}
+      title={title}
+      subtitle={subtitle}
+    >
+      <div className="slider-window">
         <div
-          className="window-wrapper"
+          className="slider-wrapper"
           style={{
             transform: `translateX(-${currentSlide * 300}px)`,
             transition: 'transform 0.5s ease-in-out',
           }}
         >
-          {children}
+          <ProductsList products={products} />
         </div>
-        <button className="prevBtn" onClick={handlePrevSlide}>
-          Prev
-        </button>
-        <button className="nextBtn" onClick={handleNextSlide}>
-          Next
-        </button>
       </div>
-    </Context.Provider>
+    </Section>
   );
 };
 

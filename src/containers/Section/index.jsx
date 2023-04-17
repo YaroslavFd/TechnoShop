@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import CountdownTimer from '../../components/CountdownTimer';
+// import CountdownTimer from '../../components/CountdownTimer';
 import { SalesTimer } from '../../components/Timer';
 import SliderArrows from '../../components/UI/SliderArrows';
 
