@@ -137,11 +137,11 @@ body {
 }
 
 .banner__button {
-  background-color: #00FF66;
+  background-color: #00ff66;
 }
 
 .banner__button:hover {
-  background-color: #A0BCE0;
+  background-color: #a0bce0;
   transition: 0.5s ease-out;
 }
 
@@ -167,8 +167,4 @@ body {
 
 .mb-140 {
   margin-bottom: 140px;
-}
-
-.first-screen__container {
-  display: flex;
 }

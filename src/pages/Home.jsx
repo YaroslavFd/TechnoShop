@@ -9,10 +9,10 @@ import { PRODUCTS } from '../data/products';
 const Home = () => {
   return (
     <>
-      <div className="container first-screen__container">
+      <Section className="mb-140" classNameContainer="d-flex">
         <LeftSitebar />
         <PromoSlider />
-      </div>
+      </Section>
       <Section
         className="mb-80"
         title="Today’s"
