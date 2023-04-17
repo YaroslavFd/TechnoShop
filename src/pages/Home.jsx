@@ -1,5 +1,4 @@
 import Banner from '../components/Banner';
-import { ProductsList } from '../components/ProductsList';
 import ProductsSlider from '../components/ProductsSlider';
 import Services from '../components/Services';
 import { Section } from '../containers/Section';
