@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
-import { Context } from '../../components/Context';
 import CountdownTimer from '../../components/CountdownTimer';
+import { SalesTimer } from '../../components/Timer';
 import SliderArrows from '../../components/UI/SliderArrows';
 
 import './styles.css';
@@ -13,9 +13,10 @@ export const Section = ({
   subtitle,
   withTimer,
   btnClick,
+  withSlider,
+  prevSlide,
+  nextSlide,
 }) => {
-  // const { handleNextSlide, handlePrevSlide } = useContext(Context);
-
   return (
     <section className={className}>
       <div className="container">
@@ -24,9 +25,7 @@ export const Section = ({
           {subtitle && withTimer && (
             <div className="d-flex align-center">
               <h2 className="section__title-text title mr-87">{subtitle}</h2>
-              <CountdownTimer
-                targetDate={new Date('April 20, 2023 23:59:00')}
-              />
+              <SalesTimer targetDate={new Date('April 20, 2023 23:59:00')} />
             </div>
           )}
           {subtitle && !withTimer && (
@@ -37,10 +36,9 @@ export const Section = ({
               View All
             </button>
           )}
-          <SliderArrows
-          // prevSlide={handlePrevSlide}
-          // nextSlide={handleNextSlide}
-          />
+          {withSlider && (
+            <SliderArrows prevSlide={prevSlide} nextSlide={nextSlide} />
+          )}
         </div>
         {children}
       </div>
