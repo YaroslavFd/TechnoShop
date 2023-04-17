@@ -1,4 +1,4 @@
-import BannerTimer from '../Timer/BannerTimer';
+import { BannerTimer } from '../Timer';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './styles.css';

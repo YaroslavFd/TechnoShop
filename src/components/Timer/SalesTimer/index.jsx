@@ -1,4 +1,4 @@
-import { useTimer } from '../Hook';
+import { useTimer } from '../useTimer';
 
 import './styles.css';
 

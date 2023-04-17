@@ -1,4 +1,4 @@
-import SalesTimer from '../../components/Timer/SalesTimer';
+import { SalesTimer } from '../../components/Timer';
 
 import './styles.css';
 
