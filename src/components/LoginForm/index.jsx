@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import accounts from '../../data/accounts';
+import { Button } from '../../UI/Button';
 
 import './styles.css';
 
@@ -70,9 +71,9 @@ const LoginForm = () => {
               value={passwordInput}
             />
             <div className="form__buttons">
-              <button className="button button__login" form="form__login">
-                Log In
-              </button>
+              <Button type="button" appearance="red">
+                Log in
+              </Button>
               <a href="/#" className="forget-password text-red">
                 Forgot Password?
               </a>

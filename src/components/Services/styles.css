@@ -1,0 +1,32 @@
+.services__box {
+  margin-bottom: 140px;
+  display: flex;
+  justify-content: center;
+  gap: 95px;
+}
+
+.services__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services__img {
+  width: 80px;
+  height: 80px;
+}
+
+.services__title {
+  margin-top: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.services__text {
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}

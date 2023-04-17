@@ -1,8 +1,6 @@
-import React, { useContext } from 'react';
-
-// import CountdownTimer from '../../components/CountdownTimer';
 import { SalesTimer } from '../../components/Timer';
 import SliderArrows from '../../components/UI/SliderArrows';
+import { Button } from '../../UI/Button';
 
 import './styles.css';
 
@@ -32,9 +30,9 @@ export const Section = ({
             <h2 className="section__title-text title">{subtitle}</h2>
           )}
           {btnClick && (
-            <button className="button" onClick={btnClick}>
+            <Button type="button" appearance="red" onClick={btnClick}>
               View All
-            </button>
+            </Button>
           )}
           {withSlider && (
             <SliderArrows prevSlide={prevSlide} nextSlide={nextSlide} />

@@ -5,7 +5,13 @@ import { ProductsList } from '../ProductsList';
 
 import './style.css';
 
-const ProductsSlider = ({ products, className, title, subtitle }) => {
+const ProductsSlider = ({
+  products,
+  className,
+  title,
+  subtitle,
+  withTimer,
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const numSlides = products.length;
 
@@ -23,6 +29,7 @@ const ProductsSlider = ({ products, className, title, subtitle }) => {
       className={className}
       title={title}
       subtitle={subtitle}
+      withTimer={withTimer}
     >
       <div className="slider-window">
         <div
