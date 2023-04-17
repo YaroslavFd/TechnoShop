@@ -199,3 +199,7 @@ body {
 .mb-140 {
   margin-bottom: 140px;
 }
+
+.first-screen__container {
+  display: flex;
+}

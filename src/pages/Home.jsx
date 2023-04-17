@@ -1,11 +1,17 @@
 import Banner from '../components/Banner';
+import LeftSitebar from '../components/LeftSitebar';
 import { ProductsList } from '../components/ProductsList';
+import PromoSlider from '../components/PromoSlider';
 import { Section } from '../containers/Section';
 import { PRODUCTS } from '../data/products';
 
 const Home = () => {
   return (
     <>
+      <div className="container first-screen__container">
+        <LeftSitebar />
+        <PromoSlider />
+      </div>
       <Section
         className="mb-80"
         title="Today’s"
