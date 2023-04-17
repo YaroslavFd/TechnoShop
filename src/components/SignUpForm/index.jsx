@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import { Button } from '../../UI/Button';
+
 import './style.css';
 
 const SignUpForm = () => {
@@ -28,7 +30,9 @@ const SignUpForm = () => {
               placeholder="Password"
               required
             />
-            <button className="button button__signup">Create Account</button>
+            <Button type="button" appearance="red">
+              Create Account
+            </Button>
           </form>
           <a className="text button__google" href="/#">
             <img src="/img/icons/form-Google.svg" alt="google" /> Sign up with
