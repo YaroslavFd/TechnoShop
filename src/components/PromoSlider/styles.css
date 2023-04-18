@@ -1,9 +1,9 @@
 .slider {
   position: relative;
-  width: 100%;
-  height: 400px;
+  width: 892px;
   margin-top: 40px;
   margin-left: 45px;
+  max-width: 100%;
 }
 
 .slider-first {
@@ -17,6 +17,7 @@
 }
 
 .slider-first__blocks {
+  width: 100%;
   display: flex;
   transition: transform 0.5s ease-in-out;
 }

@@ -1,6 +1,6 @@
 import './styles.css';
 
-const SliderArrows = ({ prevSlide, nextSlide }) => {
+export const SliderArrows = ({ prevSlide, nextSlide }) => {
   return (
     <div className="section__block_right">
       <div onClick={prevSlide} className="section__arrows">
@@ -12,5 +12,3 @@ const SliderArrows = ({ prevSlide, nextSlide }) => {
     </div>
   );
 };
-
-export default SliderArrows;

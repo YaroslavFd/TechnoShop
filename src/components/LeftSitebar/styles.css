@@ -1,0 +1,32 @@
+.menu {
+  padding-right: 16px;
+  border-right: 1px solid #E5E5E5;
+}
+
+.menu__list {
+  padding: 40px 0 0 0;
+  width: 217px;
+  list-style-type: none;
+}
+
+.menu__item:nth-child(n+2) {
+  margin-top: 16px;
+}
+
+.menu__link {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* нужна ли здесь анимация при ховере? */
+/* .menu__link:hover::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    display: block;
+    border-bottom: 1px solid #7D8184;
+    bottom: 0;
+} */

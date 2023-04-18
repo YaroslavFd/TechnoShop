@@ -1,12 +1,13 @@
 import { SalesTimer } from '../../components/Timer';
-import SliderArrows from '../../components/UI/SliderArrows';
 import { Button } from '../../UI/Button';
+import { SliderArrows } from '../../UI/SliderArrows';
 
 import './styles.css';
 
 export const Section = ({
   children,
   className = 'section',
+  classNameContainer,
   title,
   subtitle,
   withTimer,
@@ -17,7 +18,7 @@ export const Section = ({
 }) => {
   return (
     <section className={className}>
-      <div className="container">
+      <div className={`container ${classNameContainer}`}>
         {title && <h3 className="section__subtitle subtitle-red">{title}</h3>}
         <div className="section__title">
           {subtitle && withTimer && (
