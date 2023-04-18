@@ -27,4 +27,25 @@ export const PRODUCTS = [
     discount: 25,
     img: '/img/products/4.png',
   },
+  {
+    id: 5,
+    title: 'S-Series Comfort Chair',
+    price: 375,
+    discount: 25,
+    img: '/img/products/4.png',
+  },
+  {
+    id: 6,
+    title: 'S-Series Comfort Chair',
+    price: 375,
+    discount: 25,
+    img: '/img/products/4.png',
+  },
+  {
+    id: 7,
+    title: 'S-Series Comfort Chair',
+    price: 375,
+    discount: 25,
+    img: '/img/products/4.png',
+  },
 ];

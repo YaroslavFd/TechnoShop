@@ -1,6 +1,6 @@
 import Banner from '../components/Banner';
 import LeftSitebar from '../components/LeftSitebar';
-import { ProductsList } from '../components/ProductsList';
+import ProductsSlider from '../components/ProductsSlider';
 import PromoSlider from '../components/PromoSlider';
 import Services from '../components/Services';
 import { Section } from '../containers/Section';
@@ -13,23 +13,13 @@ const Home = () => {
         <LeftSitebar />
         <PromoSlider />
       </Section>
-      <Section
+      <ProductsSlider
+        products={PRODUCTS}
         className="mb-80"
         title="Today’s"
         subtitle="Flash Sales"
         withTimer
-      >
-        {/* TODOS */}
-      </Section>
-      <Section
-        className="mb-140"
-        title="This Month"
-        subtitle="Best Selling Products"
-        btnClick={() => {}}
-      >
-        <ProductsList products={PRODUCTS} />
-      </Section>
-
+      />
       <Section className="banner">
         <Banner />
       </Section>

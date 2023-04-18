@@ -1,0 +1,24 @@
+.section__block_right {
+  display: flex;
+  gap: 8px;
+}
+
+.section__block_right img {
+  height: 14px;
+}
+
+.section__arrows {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(245, 245, 245, 1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.section__arrows:hover {
+  background-color: #eae7e7;
+  transition: 0.5s ease-out;
+}

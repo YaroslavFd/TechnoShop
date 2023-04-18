@@ -1,5 +1,6 @@
 import { SalesTimer } from '../../components/Timer';
 import { Button } from '../../UI/Button';
+import { SliderArrows } from '../../UI/SliderArrows';
 
 import './styles.css';
 
@@ -11,6 +12,9 @@ export const Section = ({
   subtitle,
   withTimer,
   btnClick,
+  withSlider,
+  prevSlide,
+  nextSlide,
 }) => {
   return (
     <section className={className}>
@@ -30,6 +34,9 @@ export const Section = ({
             <Button type="button" appearance="red" onClick={btnClick}>
               View All
             </Button>
+          )}
+          {withSlider && (
+            <SliderArrows prevSlide={prevSlide} nextSlide={nextSlide} />
           )}
         </div>
         {children}
