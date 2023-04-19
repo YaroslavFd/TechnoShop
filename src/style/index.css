@@ -12,6 +12,7 @@ body {
 
 .container {
   width: 1170px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -64,7 +65,7 @@ body {
 .form__input {
   padding: 7px 0;
   border: none;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #7D8184;
 }
 
 .form__buttons {
@@ -125,11 +126,21 @@ body {
 }
 
 .login__box-link {
+  position: relative;
   margin-left: 16px;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: #7d8184;
+}
+
+.login__box-link:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #7D8184;
+  bottom: 0;
 }
 
 .button__login {
