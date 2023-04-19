@@ -8,24 +8,22 @@
   transition: 0.3s ease-out;
   &.red {
     background-color: #db4444;
-    padding: 16px 48px;
     border: none;
     color: #ffffff;
-    border: 1px solid transparent;
+    border: 1px solid #DB4444;
     &:hover {
-        color: #000000;
-        background-color: #ffffff;
-        border-color: #7d8184;;
+      background-color: #E07575;
+      border: 1px solid #E07575;
     }
   }
   &.white {
     background-color: #ffffff;
-    color: #000;
+    color: #000000;
     border: 1px solid #7d8184;
     &:hover {
-        color: #ffffff;
-        background-color: #db4444;
-        border-color: transparent;
+      color: #000000;
+      background-color: #ffffff;
+      border: 1px solid #7D8184;
     }
   }
   &.green {
