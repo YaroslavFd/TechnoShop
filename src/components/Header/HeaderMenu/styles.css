@@ -72,10 +72,26 @@
 }
 
 .header-menu__icons-heart {
+  position: relative;
   margin-left: 30px;
 }
 
 .header-menu__icons-cart,
 .header-menu__icons-user {
+  position: relative;
   margin-left: 16px;
+}
+
+.product-counter {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -1px;
+  top: -18px;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #DB4444;
+  border: none;
+  border-radius: 50%;
 }
