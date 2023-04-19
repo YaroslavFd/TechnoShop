@@ -386,3 +386,8 @@ template {
   margin: 0;
   padding: 0;
 }
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
