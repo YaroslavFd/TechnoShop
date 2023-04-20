@@ -42,4 +42,28 @@ export const CATEGORIES = [
     href: '/#',
     svg: <Gaming />,
   },
+  {
+    id: 7,
+    name: 'Gaming',
+    href: '/#',
+    svg: <Gaming />,
+  },
+  {
+    id: 8,
+    name: 'Gaming',
+    href: '/#',
+    svg: <Gaming />,
+  },
+  {
+    id: 9,
+    name: 'Gaming',
+    href: '/#',
+    svg: <Gaming />,
+  },
+  {
+    id: 10,
+    name: 'Gaming',
+    href: '/#',
+    svg: <Gaming />,
+  },
 ];

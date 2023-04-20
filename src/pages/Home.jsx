@@ -1,5 +1,4 @@
 import Banner from '../components/Banner';
-import CategoriesList from '../components/CategoriesList';
 import { CATEGORIES } from '../components/CategoriesList/constants';
 import LeftSitebar from '../components/LeftSitebar';
 import ProductsSlider from '../components/ProductsSlider';
@@ -16,19 +15,20 @@ const Home = () => {
         <PromoSlider />
       </Section>
       <ProductsSlider
-        products={PRODUCTS}
+        slides={PRODUCTS}
+        type="products"
         className="mb-80"
         title="Today’s"
         subtitle="Flash Sales"
         withTimer
       />
-      <Section
+      <ProductsSlider
+        slides={CATEGORIES}
+        type="categories"
         className="mb-80"
-        title="Browse By Category"
-        subtitle="Categories"
-      >
-        <CategoriesList categories={CATEGORIES} />
-      </Section>
+        title="Today’s"
+        subtitle="Flash Sales"
+      />
       <Section className="banner">
         <Banner />
       </Section>

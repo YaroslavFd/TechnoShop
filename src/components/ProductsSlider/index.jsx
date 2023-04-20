@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Section } from '../../containers/Section';
+import CategoriesList from '../CategoriesList';
 import { ProductsList } from '../ProductsList';
 
 import './style.css';
 
 const ProductsSlider = ({
-  products,
+  slides,
+  type,
   className,
   title,
   subtitle,
   withTimer,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const numSlides = products.length;
+  const slideRef = useRef('');
+  const slideWidth = slideRef.current.offsetWidth;
+  const numSlides = slides.length;
 
   const handleNextSlide = () =>
     setCurrentSlide((prevSlide) => (prevSlide + 1) % numSlides);
@@ -35,11 +39,19 @@ const ProductsSlider = ({
         <div
           className="slider-wrapper"
           style={{
-            transform: `translateX(-${currentSlide * 300}px)`,
-            transition: 'transform 0.5s ease-in-out',
+            transform: `translateX(-${currentSlide * (slideWidth + 30)}px)`,
+            transition:
+              currentSlide === numSlides - 1 || currentSlide === 0
+                ? 'none'
+                : 'transform 0.5s ease-in-out',
           }}
         >
-          <ProductsList products={products} />
+          {type === 'products' && (
+            <ProductsList products={slides} slideRef={slideRef} />
+          )}
+          {type === 'categories' && (
+            <CategoriesList categories={slides} slideRef={slideRef} />
+          )}
         </div>
       </div>
     </Section>

@@ -1,8 +1,8 @@
 import './styles.css';
 
-const ProductCard = ({ title, price, discount, img }) => {
+const ProductCard = ({ slideRef, title, price, discount, img }) => {
   return (
-    <div className="card">
+    <div ref={slideRef} className="card">
       <div className="card__block">
         <img className="card__img" src={img} alt={title} />
         <div className="card__badge">{`-${discount}%`}</div>

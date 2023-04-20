@@ -7,5 +7,6 @@
 .category__box {
   margin-top: 60px;
   display: flex;
+  column-gap: 30px;
   justify-content: space-between;
 }
