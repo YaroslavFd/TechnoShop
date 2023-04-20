@@ -1,8 +1,8 @@
 import './styles.css';
 
-const ProductCard = ({ slideRef, title, price, discount, img }) => {
+const ProductCard = ({ title, price, discount, img }) => {
   return (
-    <div ref={slideRef} className="card">
+    <div className="card">
       <div className="card__block">
         <img className="card__img" src={img} alt={title} />
         <div className="card__badge">{`-${discount}%`}</div>
@@ -29,7 +29,7 @@ const ProductCard = ({ slideRef, title, price, discount, img }) => {
         {title}
       </a>
       <p className="card__price text-red">
-        ${price}{' '}
+        ${price}
         <span className="card__price_old">${price * (1 + discount / 100)}</span>
       </p>
       <div className="card__rating">
