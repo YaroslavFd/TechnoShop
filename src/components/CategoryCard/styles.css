@@ -10,10 +10,6 @@
   cursor: pointer;
   text-decoration: none;
   color: #000000;
-}
-
-.category__block:hover {
-  transform: translateY(-5px);
   transition: transform 0.5s ease-out;
 }
 
@@ -28,20 +24,14 @@
   line-height: 24px;
 }
 
-.category__block:hover,
-.category__block:hover .category__img {
-  color: #ffffff;
+.category__block:hover {
+  transform: translateY(-5px);
   background-color: #db4444;
   border: none;
-  stroke: #ffffff;
+  color: #ffffff;
 }
 
-/*  Задумка чтобы блок категории активный был или всёже лучше ховер оставить?
-.category__block_active {
-  color: #ffffff;
-  background-color: #db4444;
-  border: none;
-}
-.category__img_active {
+.category__block:hover,
+.category__block:hover svg {
   stroke: #ffffff;
-} */
+}
