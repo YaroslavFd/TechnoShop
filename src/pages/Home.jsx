@@ -1,4 +1,6 @@
 import Banner from '../components/Banner';
+import CategoriesList from '../components/CategoriesList';
+import { CATEGORIES } from '../components/CategoriesList/constants';
 import LeftSitebar from '../components/LeftSitebar';
 import ProductsSlider from '../components/ProductsSlider';
 import PromoSlider from '../components/PromoSlider';
@@ -20,6 +22,13 @@ const Home = () => {
         subtitle="Flash Sales"
         withTimer
       />
+      <Section
+        className="mb-80"
+        title="Browse By Category"
+        subtitle="Categories"
+      >
+        <CategoriesList categories={CATEGORIES} />
+      </Section>
       <Section className="banner">
         <Banner />
       </Section>
