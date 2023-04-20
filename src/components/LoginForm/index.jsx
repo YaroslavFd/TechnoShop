@@ -1,8 +1,8 @@
+import accounts from 'data/accounts';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import accounts from '../../data/accounts';
-import { Button } from '../../UI/Button';
+import { Button } from 'UI/Button';
 
 import './styles.css';
 

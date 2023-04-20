@@ -1,6 +1,6 @@
+import { Section } from 'containers/Section';
 import React, { useState } from 'react';
 
-import { Section } from '../../containers/Section';
 import { ProductsList } from '../ProductsList';
 
 import './style.css';

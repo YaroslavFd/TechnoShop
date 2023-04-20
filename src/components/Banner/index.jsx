@@ -1,4 +1,5 @@
-import { Button } from '../../UI/Button';
+import { Button } from 'UI/Button';
+
 import { BannerTimer } from '../Timer';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
