@@ -1,12 +1,12 @@
-import Banner from '../components/Banner';
-import CategoriesList from '../components/CategoriesList';
-import { CATEGORIES } from '../components/CategoriesList/constants';
-import LeftSitebar from '../components/LeftSitebar';
-import ProductsSlider from '../components/ProductsSlider';
-import PromoSlider from '../components/PromoSlider';
-import Services from '../components/Services';
-import { Section } from '../containers/Section';
-import { PRODUCTS } from '../data/products';
+import Banner from 'components/Banner';
+import CategoriesList from 'components/CategoriesList';
+import { CATEGORIES } from 'components/CategoriesList/constants';
+import LeftSitebar from 'components/LeftSitebar';
+import ProductsSlider from 'components/ProductsSlider';
+import PromoSlider from 'components/PromoSlider';
+import Services from 'components/Services';
+import { Section } from 'containers/Section';
+import { PRODUCTS } from 'data/products';
 
 const Home = () => {
   return (

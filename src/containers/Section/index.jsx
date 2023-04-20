@@ -1,6 +1,6 @@
-import { SalesTimer } from '../../components/Timer';
-import { Button } from '../../UI/Button';
-import { SliderArrows } from '../../UI/SliderArrows';
+import { SalesTimer } from 'components/Timer';
+import { Button } from 'UI/Button';
+import { SliderArrows } from 'UI/SliderArrows';
 
 import './styles.css';
 
