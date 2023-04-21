@@ -2,6 +2,7 @@ import Banner from 'components/Banner';
 import { CATEGORIES } from 'components/CategoriesList/constants';
 import CategoryCard from 'components/CategoryCard';
 import LeftSitebar from 'components/LeftSitebar';
+import NewArrival from 'components/NewArrival';
 import ProductCard from 'components/ProductCard';
 import ProductsSlider from 'components/ProductsSlider';
 import PromoSlider from 'components/PromoSlider';
@@ -34,8 +35,8 @@ const Home = () => {
         viewItems={6}
         type="categories"
         className="mb-80"
-        title="Today’s"
-        subtitle="Flash Sales"
+        title="Categories"
+        subtitle="Browse By Category"
       >
         {CATEGORIES.map((category) => (
           <CategoryCard key={category.id} {...category} />
@@ -43,6 +44,9 @@ const Home = () => {
       </ProductsSlider>
       <Section className="banner">
         <Banner />
+      </Section>
+      <Section className="mb-140" title="Featured" subtitle="New Arrival">
+        <NewArrival />
       </Section>
       <Section>
         <Services />
