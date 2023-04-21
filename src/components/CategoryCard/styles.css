@@ -1,10 +1,11 @@
 .category__block {
-  width: 170px;
+  min-width: 170px;
   height: 145px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* margin-right: 30px; */
   border: 1px solid #e5e5e5;
   border-radius: 4px;
   cursor: pointer;

@@ -29,7 +29,7 @@ const ProductCard = ({ title, price, discount, img }) => {
         {title}
       </a>
       <p className="card__price text-red">
-        ${price}{' '}
+        ${price}
         <span className="card__price_old">${price * (1 + discount / 100)}</span>
       </p>
       <div className="card__rating">
