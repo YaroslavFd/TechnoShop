@@ -14,18 +14,17 @@ export const Typography = (props) => {
     size = 36,
     weight = '600',
     children,
-    appearance = 'black',
-    withLeftBorder,
+    color = 'black',
   } = props;
 
   const Component = useMemo(() => getTag(type), [type]);
   return (
     <Component
       id={id}
-      className={cn(className, {
-        [styles.red]: appearance === 'red',
-        [styles.black]: appearance === 'black',
-        [styles.white]: appearance === 'white',
+      className={cn(className, styles[type], {
+        [styles.red]: color === 'red',
+        [styles.black]: color === 'black',
+        [styles.white]: color === 'white',
       })}
       title={title}
       style={{ fontWeight: weight, fontSize: `${size}px` }}

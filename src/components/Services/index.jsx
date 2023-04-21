@@ -1,3 +1,5 @@
+import { Typography } from 'UI/Typography';
+
 import './styles.css';
 
 const Services = () => {
@@ -9,8 +11,17 @@ const Services = () => {
           src="/img/icons/Services-fast.svg"
           alt="fast delivery"
         />
-        <h3 className="services__title">Free and fast delivery</h3>
-        <p className="services__text">Free delivery for all orders over $140</p>
+        <Typography type="headXl" className="services__title" size={20}>
+          Free and fast delivery
+        </Typography>
+        <Typography
+          type="paragraph"
+          className="services__text"
+          size={14}
+          weight={400}
+        >
+          Free delivery for all orders over $140
+        </Typography>
       </div>
 
       <div className="services__block">
@@ -19,8 +30,17 @@ const Services = () => {
           src="/img/icons/Services-customer.svg"
           alt="fast delivery"
         />
-        <h3 className="services__title">24/7 customer service</h3>
-        <p className="services__text">Friendly 24/7 customer support</p>
+        <Typography type="headXl" className="services__title" size={20}>
+          24/7 customer service
+        </Typography>
+        <Typography
+          type="paragraph"
+          className="services__text"
+          size={14}
+          weight={400}
+        >
+          Friendly 24/7 customer support
+        </Typography>
       </div>
 
       <div className="services__block">
@@ -29,8 +49,17 @@ const Services = () => {
           src="/img/icons/Services-money.svg"
           alt="fast delivery"
         />
-        <h3 className="services__title"> Money back guarantee</h3>
-        <p className="services__text">We return money within 30 days</p>
+        <Typography type="headXl" className="services__title" size={20}>
+          Money back guarantee
+        </Typography>
+        <Typography
+          type="paragraph"
+          className="services__text"
+          size={14}
+          weight={400}
+        >
+          We return money within 30 days
+        </Typography>
       </div>
     </div>
   );

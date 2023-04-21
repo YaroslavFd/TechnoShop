@@ -1,0 +1,25 @@
+.headXlBorderRed {
+  height: 40px;
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 20px;
+    background-color: #db4444;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 16px;
+  }
+}
+
+.red {
+  color: #db4444;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.black {
+  color: #000000;
+}

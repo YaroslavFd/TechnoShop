@@ -18,15 +18,11 @@
 
 .services__title {
   margin-top: 24px;
-  font-weight: 600;
-  font-size: 20px;
   line-height: 28px;
   text-transform: uppercase;
 }
 
 .services__text {
   margin-top: 8px;
-  font-weight: 400;
-  font-size: 14px;
   line-height: 21px;
 }
