@@ -1,6 +1,8 @@
 import Banner from 'components/Banner';
 import { CATEGORIES } from 'components/CategoriesList/constants';
+import CategoryCard from 'components/CategoryCard';
 import LeftSitebar from 'components/LeftSitebar';
+import ProductCard from 'components/ProductCard';
 import ProductsSlider from 'components/ProductsSlider';
 import PromoSlider from 'components/PromoSlider';
 import Services from 'components/Services';
