@@ -391,3 +391,24 @@ textarea:focus,
 input:focus {
   outline: none;
 }
+
+/* Убираем стрелки. Это для браузера Chrome: */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+/* Убираем стрелки. Это для браузера Firefox: */
+input[type="number"] {
+-moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+-moz-appearance: number-input;
+}
+/* Убираем стрелки. Для других */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}

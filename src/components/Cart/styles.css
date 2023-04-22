@@ -1,0 +1,22 @@
+.cart {
+  margin-top: 80px;
+  margin-bottom: 140px;
+}
+.cart .section__title {
+  margin-bottom: 0px;
+}
+.cart__box {
+  margin-top: 80px;
+  padding: 0 40px;
+}
+
+.cart__block-buttons {
+  margin-top: 24px;
+  margin-bottom: 80px;
+}
+
+.cart__block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

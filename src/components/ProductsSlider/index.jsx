@@ -1,5 +1,5 @@
 import { Section } from 'containers/Section';
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import './style.css';
 
