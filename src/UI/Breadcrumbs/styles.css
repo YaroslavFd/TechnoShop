@@ -20,6 +20,6 @@ ul.breadcrumbs li+li:before {
   color: #7D8184;
 }
 
-.breadcrumbs__link--active {
+.breadcrumbs__link.active {
   color: #000;
 }

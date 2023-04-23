@@ -1,4 +1,4 @@
-import PageMenu from 'components/PageMenu';
+import Breadcrumbs from 'UI/Breadcrumbs';
 import { Button } from 'UI/Button';
 
 import CartCoupon from './CartCoupon';
@@ -12,7 +12,12 @@ import './styles.css';
 const Cart = () => {
   return (
     <>
-      <PageMenu items={[{ name: 'Cart', src: '/#' }]} active={true} />
+      <Breadcrumbs
+        items={[
+          { name: 'Home', src: '/' },
+          { name: 'Cart', src: '/cart' },
+        ]}
+      />
 
       <div className="cart__box">
         <CartTitles />
