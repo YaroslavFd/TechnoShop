@@ -48,10 +48,10 @@ const HeaderMenu = () => {
               <img src="/img/icons/heart-header.png" alt="heart" />
               <span className="product-counter">4</span>
             </a>
-            <a href="/#" className="header-menu__icons-cart">
+            <NavLink to="/cart" className="header-menu__icons-cart">
               <img src="/img/icons/cart-header.png" alt="cart" />
               <span className="product-counter">2</span>
-            </a>
+            </NavLink>
             <a href="/#" className="header-menu__icons-user">
               <img src="/img/icons/user.png" alt="user" />
             </a>

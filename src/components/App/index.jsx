@@ -1,6 +1,6 @@
 import Main from 'containers/Main';
 import Wrapper from 'containers/Wrapper';
-import { About, Contact, Home, Login, SingUp } from 'pages';
+import { About, CartPage, Contact, Home, Login, SingUp } from 'pages';
 import { Route, Routes } from 'react-router-dom';
 
 import Footer from '../Footer';
@@ -17,6 +17,7 @@ const App = () => {
           <Route path="/sing-up" element={<SingUp />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
       </Main>
       <Footer />

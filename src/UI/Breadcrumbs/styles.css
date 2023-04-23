@@ -1,5 +1,4 @@
 .page-menu {
-  margin-top: 80px;
   display: flex;
   justify-content: space-between;
 }
@@ -19,4 +18,8 @@ ul.breadcrumbs li+li:before {
 .breadcrumbs__link {
   text-decoration: none;
   color: #7D8184;
+}
+
+.breadcrumbs__link.active {
+  color: #000;
 }
