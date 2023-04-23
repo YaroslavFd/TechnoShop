@@ -76,6 +76,8 @@
 .icon-cancel {
   position: absolute;
   cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
   height: 18px;
   width: 18px;
   top: 22px;
@@ -86,4 +88,10 @@
   background-color: #DB4444;
   border: none;
   border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.cart__block-row:hover .icon-cancel {
+  opacity: 1;
+  visibility: visible;
 }

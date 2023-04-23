@@ -2,7 +2,13 @@ import CartProduct from '../CartProduct';
 
 import './styles.css';
 
-const CartProducts = ({ products }) => {
+const CartProducts = ({
+  products,
+  deleteProduct,
+  increase,
+  decrease,
+  changeValue,
+}) => {
   return (
     <div className="cart__block cart__block-list text">
       {products.map((product) => {
@@ -15,6 +21,10 @@ const CartProducts = ({ products }) => {
             price={product.price}
             count={product.count}
             totalPrice={product.totalPrice}
+            deleteProduct={deleteProduct}
+            increase={increase}
+            decrease={decrease}
+            changeValue={changeValue}
           />
         );
       })}
