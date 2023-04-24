@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'UI/Button';
 
 import AuthorizationForm from '..';
+import Input from '../Input';
 import { useInput } from '../useInput';
 
 import './styles.css';
@@ -17,42 +18,24 @@ const SignUpForm = () => {
       title="Create an account"
       subtitle="Enter your details below"
     >
-      <input
-        className={`form__input ${name.error && 'input__error'}`}
-        type="text"
-        placeholder="Name"
-        required
-        onChange={(e) => name.onChange(e)}
-        onBlur={(e) => name.onBlur(e)}
-        value={name.value}
-      />
-      {name.error}
-
-      <input
-        className={`form__input ${email.error && 'input__error'}`}
+      <Input name={name} type="text" placeholder="Name" required={true} />
+      <Input
+        name={email}
         type="text"
         placeholder="Email or Phone Number"
-        required
-        onChange={(e) => email.onChange(e)}
-        onBlur={(e) => email.onBlur(e)}
-        value={email.value}
+        required={true}
       />
-      {email.error}
-
-      <input
-        className={`form__input ${password.error && 'input__error'}`}
+      <Input
+        name={password}
         type="password"
         placeholder="Password"
-        required
-        onChange={(e) => password.onChange(e)}
-        onBlur={(e) => password.onBlur(e)}
-        value={password.value}
+        required={true}
       />
-      {password.error}
-
       <div className="signup__buttons">
         <Button
-          disabled={!email.inputValid || !password.inputValid}
+          disabled={
+            !name.inputValid || !email.inputValid || !password.inputValid
+          }
           type="button"
           appearance="red"
         >
