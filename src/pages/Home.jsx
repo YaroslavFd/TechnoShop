@@ -9,6 +9,7 @@ import PromoSlider from 'components/PromoSlider';
 import Services from 'components/Services';
 import { Section } from 'containers/Section';
 import { PRODUCTS } from 'data/products';
+import { Icon } from 'UI/Icons';
 
 const Home = () => {
   return (
@@ -17,6 +18,13 @@ const Home = () => {
         <LeftSitebar />
         <PromoSlider />
       </Section>
+      <h1>
+        Icon
+        {/* <img src={Icon} alt="" /> */}
+        <Icon />
+        {/* {<DefaultIcon />} */}
+      </h1>
+
       <ProductsSlider
         length={PRODUCTS.length}
         viewItems={4}
@@ -30,7 +38,7 @@ const Home = () => {
           <ProductCard key={`product-${product.id}`} {...product} />
         ))}
       </ProductsSlider>
-      <ProductsSlider
+      {/* <ProductsSlider
         length={CATEGORIES.length}
         viewItems={6}
         type="categories"
@@ -41,7 +49,7 @@ const Home = () => {
         {CATEGORIES.map((category) => (
           <CategoryCard key={category.id} {...category} />
         ))}
-      </ProductsSlider>
+      </ProductsSlider> */}
       <Section className="banner">
         <Banner />
       </Section>

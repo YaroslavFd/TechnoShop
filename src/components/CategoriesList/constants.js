@@ -1,9 +1,9 @@
-import { ReactComponent as Camera } from './icons/Camera.svg';
-import { ReactComponent as Computers } from './icons/Computers.svg';
-import { ReactComponent as Gaming } from './icons/Gaming.svg';
-import { ReactComponent as HeadPhones } from './icons/HeadPhones.svg';
-import { ReactComponent as Phones } from './icons/Phones.svg';
-import { ReactComponent as SmartWatch } from './icons/SmartWatch.svg';
+import Camera from './icons/Camera.svg';
+import Computers from './icons/Computers.svg';
+import Gaming from './icons/Gaming.svg';
+import HeadPhones from './icons/HeadPhones.svg';
+import Phones from './icons/Phones.svg';
+import SmartWatch from './icons/SmartWatch.svg';
 
 export const CATEGORIES = [
   {
