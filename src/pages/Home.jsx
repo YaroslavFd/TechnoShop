@@ -31,7 +31,7 @@ const Home = () => {
           <ProductCard key={`product-${product.id}`} {...product} />
         ))}
       </ProductsSlider>
-      {/* <ProductsSlider
+      <ProductsSlider
         length={CATEGORIES.length}
         viewItems={6}
         type="categories"
@@ -42,7 +42,7 @@ const Home = () => {
         {CATEGORIES.map((category) => (
           <CategoryCard key={category.id} {...category} />
         ))}
-      </ProductsSlider> */}
+      </ProductsSlider>
       <Section className="banner">
         <Banner />
       </Section>
