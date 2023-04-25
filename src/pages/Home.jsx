@@ -17,6 +17,7 @@ const Home = () => {
         <LeftSitebar />
         <PromoSlider />
       </Section>
+
       <ProductsSlider
         length={PRODUCTS.length}
         viewItems={4}

@@ -1,13 +1,15 @@
+import { Icon } from '../Icon';
+
 import './styles.css';
 
 export const SliderArrows = ({ prevSlide, nextSlide }) => {
   return (
     <div className="section__block_right">
       <div onClick={prevSlide} className="section__arrows">
-        <img src="/img/icons/section-arrow-left.svg" alt="arrow left" />
+        <Icon name="sectionArrowLeft" />
       </div>
       <div onClick={nextSlide} className="section__arrows">
-        <img src="/img/icons/section-arrow-right.svg" alt="arrow right" />
+        <Icon name="sectionArrowRight" />
       </div>
     </div>
   );
