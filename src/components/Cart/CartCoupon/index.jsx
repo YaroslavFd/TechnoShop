@@ -5,8 +5,8 @@ import './styles.css';
 const couponName = 'REACT<3';
 
 const CartCoupon = ({ value, setIsCoupon, setCouponValue }) => {
-  const applyCoupon = (event, value) => {
-    event.preventDefault();
+  const applyCoupon = (e, value) => {
+    e.preventDefault();
 
     setCouponValue('');
     if (couponName === value) {
@@ -19,10 +19,7 @@ const CartCoupon = ({ value, setIsCoupon, setCouponValue }) => {
   };
 
   return (
-    <form
-      className="cart__coupon"
-      onSubmit={(event) => applyCoupon(event, value)}
-    >
+    <form className="cart__coupon" onSubmit={(e) => applyCoupon(e, value)}>
       <input
         className="cart__coupon_input"
         type="text"
@@ -32,7 +29,7 @@ const CartCoupon = ({ value, setIsCoupon, setCouponValue }) => {
       />
       <Button
         className="cart__coupon_button"
-        onClick={(event) => applyCoupon(event, value)}
+        onClick={(e) => applyCoupon(e, value)}
       >
         Apply Coupon
       </Button>

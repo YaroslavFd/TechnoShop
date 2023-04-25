@@ -16,11 +16,17 @@ const Cart = () => {
   const [couponValue, setCouponValue] = useState('');
   const [isCoupon, setIsCoupon] = useState(false);
 
-  const deleteProduct = (id) => {
+  const deleteProduct = (e) => {
+    const id = +e.currentTarget
+      .closest('.cart__block-row')
+      .getAttribute('data-product-id');
     setProducts(products.filter((item) => id !== item.id));
   };
 
-  const increase = (id) => {
+  const increase = (e) => {
+    const id = +e.currentTarget
+      .closest('.cart__block-row')
+      .getAttribute('data-product-id');
     setProducts((products) => {
       return products.map((product) => {
         if (product.id === id) {
@@ -36,7 +42,10 @@ const Cart = () => {
     });
   };
 
-  const decrease = (id) => {
+  const decrease = (e) => {
+    const id = +e.currentTarget
+      .closest('.cart__block-row')
+      .getAttribute('data-product-id');
     setProducts((products) => {
       return products.map((product) => {
         if (product.id === id) {
@@ -52,7 +61,13 @@ const Cart = () => {
     });
   };
 
-  const changeValue = (id, value) => {
+  const changeValue = (e) => {
+    const id = +e.currentTarget
+      .closest('.cart__block-row')
+      .getAttribute('data-product-id');
+
+    const value = +e.target.value;
+
     setProducts((products) => {
       return products.map((product) => {
         if (product.id === id) {

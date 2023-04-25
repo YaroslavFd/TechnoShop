@@ -13,9 +13,9 @@ const CartProduct = ({
   changeValue,
 }) => {
   return (
-    <div className="cart__block-row">
+    <div className="cart__block-row" data-product-id={id}>
       <div className="cart__item">
-        <button className="icon-cancel" onClick={() => deleteProduct(id)}>
+        <button className="icon-cancel" onClick={deleteProduct}>
           ✖
         </button>
         <img className="cart-image" src={src} alt="LCD Monitor" />
@@ -29,16 +29,16 @@ const CartProduct = ({
             className="cart__item-input"
             type="number"
             value={count}
-            onChange={(e) => changeValue(id, +e.target.value)}
+            onChange={changeValue}
           />
-          <button className="cart_arrow_up" onClick={() => increase(id)}>
+          <button className="cart_arrow_up" onClick={increase}>
             <img
               className="cart_arrow_up-img"
               src="/img/icons/arrow-up.svg"
               alt="arrow up"
             />
           </button>
-          <button className="cart_arrow_down" onClick={() => decrease(id)}>
+          <button className="cart_arrow_down" onClick={decrease}>
             <img
               className="cart_arrow_down-img"
               src="/img/icons/arrow-down.svg"
