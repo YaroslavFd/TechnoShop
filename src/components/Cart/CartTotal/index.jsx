@@ -2,9 +2,14 @@ import { Button } from 'UI/Button';
 
 import './styles.css';
 
-const CartTotal = ({ total, isCoupon }) => {
-  const costShipping = 50;
-  const priceWithCoupon = total * 0.8;
+const costShipping = 50;
+
+const CartTotal = ({ isCoupon, products }) => {
+  const totalPrice = products.reduce((prev, curr) => {
+    return prev + curr.totalPrice;
+  }, 0);
+
+  const priceWithCoupon = totalPrice * 0.8;
   return (
     <div className="cart__total">
       <h3 className="cart__total-title">Cart Total</h3>
@@ -13,13 +18,17 @@ const CartTotal = ({ total, isCoupon }) => {
           <p className="cart__total-text">Subtotal:</p>
           <div className="cart__total-price">
             <span className="dollar">$</span>
-            {total}
+            {totalPrice}
           </div>
         </div>
         <div className="cart__total-item cart__total-line">
           <p className="cart__total-text">Shipping:</p>
           <div className="cart__total-price">
-            {total > 300 ? 'Free' : total !== 0 ? `$${costShipping}` : '$0'}
+            {totalPrice > 300
+              ? 'Free'
+              : totalPrice !== 0
+              ? `$${costShipping}`
+              : '$0'}
           </div>
         </div>
         <div className="cart__total-item">
@@ -31,7 +40,11 @@ const CartTotal = ({ total, isCoupon }) => {
               }
             >
               <span className="dollar">$</span>
-              {total > 300 ? total : total !== 0 ? total + costShipping : 0}
+              {totalPrice > 300
+                ? totalPrice
+                : totalPrice !== 0
+                ? totalPrice + costShipping
+                : 0}
             </div>
             {isCoupon && (
               <div className="cart__total-price--new">

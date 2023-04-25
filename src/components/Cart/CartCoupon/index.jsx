@@ -2,7 +2,22 @@ import { Button } from 'UI/Button';
 
 import './styles.css';
 
-const CartCoupon = ({ value, changeCouponValue, applyCoupon }) => {
+const couponName = 'REACT<3';
+
+const CartCoupon = ({ value, setIsCoupon, setCouponValue }) => {
+  const applyCoupon = (event, value) => {
+    event.preventDefault();
+
+    setCouponValue('');
+    if (couponName === value) {
+      setIsCoupon(true);
+    }
+  };
+
+  const changeCouponValue = (value) => {
+    setCouponValue(value);
+  };
+
   return (
     <form
       className="cart__coupon"

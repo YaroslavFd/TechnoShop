@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Breadcrumbs from 'UI/Breadcrumbs';
-import { Button } from 'UI/Button';
+import { Typography } from 'UI/Typography';
 
 import CartCoupon from './CartCoupon';
 import CartProducts from './CartProducts';
@@ -12,38 +12,17 @@ import { PRODUCTS } from './data';
 import './styles.css';
 
 const Cart = () => {
-  const [cart, setCart] = useState(PRODUCTS);
+  const [products, setProducts] = useState(PRODUCTS);
   const [couponValue, setCouponValue] = useState('');
   const [isCoupon, setIsCoupon] = useState(false);
 
-  let totalPrice = cart.reduce((prev, curr) => {
-    return prev + curr.totalPrice;
-  }, 0);
-
-  const couponName = 'REACT<3';
-
-  const applyCoupon = (event, value) => {
-    event.preventDefault();
-
-    setCouponValue('');
-    if (couponName === value) {
-      setIsCoupon(true);
-    }
-  };
-
-  const [total, setTotal] = useState(totalPrice);
-
-  useEffect(() => {
-    setTotal(totalPrice);
-  }, [cart]);
-
   const deleteProduct = (id) => {
-    setCart(cart.filter((item) => id !== item.id));
+    setProducts(products.filter((item) => id !== item.id));
   };
 
   const increase = (id) => {
-    setCart((cart) => {
-      return cart.map((product) => {
+    setProducts((products) => {
+      return products.map((product) => {
         if (product.id === id) {
           const newCount = product.count + 1 > 100 ? 100 : ++product.count;
           return {
@@ -58,8 +37,8 @@ const Cart = () => {
   };
 
   const decrease = (id) => {
-    setCart((cart) => {
-      return cart.map((product) => {
+    setProducts((products) => {
+      return products.map((product) => {
         if (product.id === id) {
           const newCount = product.count - 1 > 1 ? product.count - 1 : 1;
           return {
@@ -74,8 +53,8 @@ const Cart = () => {
   };
 
   const changeValue = (id, value) => {
-    setCart((cart) => {
-      return cart.map((product) => {
+    setProducts((products) => {
+      return products.map((product) => {
         if (product.id === id) {
           const newValue = value !== 0 ? (value > 100 ? 100 : value) : 1;
           return {
@@ -89,10 +68,6 @@ const Cart = () => {
     });
   };
 
-  const changeCouponValue = (value) => {
-    setCouponValue(value);
-  };
-
   return (
     <>
       <Breadcrumbs
@@ -103,14 +78,16 @@ const Cart = () => {
       />
 
       <div className="cart__box">
-        {cart.length ? (
+        {products.length ? (
           <CartTitles />
         ) : (
-          <h2 style={{ marginBottom: 30 }}>Корзина пуста</h2>
+          <Typography>
+            <h3 style={{ marginBottom: 30 }}>Корзина пуста</h3>
+          </Typography>
         )}
 
         <CartProducts
-          products={cart}
+          products={products}
           deleteProduct={deleteProduct}
           increase={increase}
           decrease={decrease}
@@ -124,10 +101,10 @@ const Cart = () => {
         <div className="cart__block">
           <CartCoupon
             value={couponValue}
-            changeCouponValue={changeCouponValue}
-            applyCoupon={applyCoupon}
+            setIsCoupon={setIsCoupon}
+            setCouponValue={setCouponValue}
           />
-          <CartTotal total={total} isCoupon={isCoupon} />
+          <CartTotal isCoupon={isCoupon} products={products} />
         </div>
       </div>
     </>
