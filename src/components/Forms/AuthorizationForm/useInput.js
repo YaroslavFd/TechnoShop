@@ -4,7 +4,7 @@ import { useValidation } from './useValidation';
 
 export const useInput = (initialValue, validations) => {
   const [value, setValue] = useState(initialValue);
-  const [isDirty, setIsDirty] = useState();
+  const [isDirty, setIsDirty] = useState(false);
   const valid = useValidation(value, validations);
 
   const onChange = (e) => {

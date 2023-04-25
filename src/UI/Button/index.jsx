@@ -24,7 +24,7 @@ export const Button = (props) => {
       })}
       type={type}
       onClick={onClick}
-      style={disabled ? { opacity: 0.5, pointerEvents: 'none' } : {}}
+      disabled={disabled}
     >
       <span className={contentClassName}>{children}</span>
     </button>

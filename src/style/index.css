@@ -10,6 +10,11 @@ body {
   font-family: Poppins, Arial, sans-serif;
 }
 
+button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .container {
   width: 1170px;
   max-width: 100%;

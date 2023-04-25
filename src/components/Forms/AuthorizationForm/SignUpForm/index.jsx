@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
 import { Button } from 'UI/Button';
+import Input from 'UI/Input';
 
 import AuthorizationForm from '..';
-import Input from '../Input';
 import { useInput } from '../useInput';
 
 import './styles.css';
@@ -33,11 +33,11 @@ const SignUpForm = () => {
       />
       <div className="signup__buttons">
         <Button
+          type="button"
+          appearance="red"
           disabled={
             !name.inputValid || !email.inputValid || !password.inputValid
           }
-          type="button"
-          appearance="red"
         >
           Create Account
         </Button>

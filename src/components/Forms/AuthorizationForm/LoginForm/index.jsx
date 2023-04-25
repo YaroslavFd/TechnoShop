@@ -1,7 +1,7 @@
 import { Button } from 'UI/Button';
+import Input from 'UI/Input';
 
 import AuthorizationForm from '..';
-import Input from '../Input';
 import { useInput } from '../useInput';
 
 import './styles.css';
@@ -29,9 +29,9 @@ const LoginForm = () => {
       />
       <div className="login__buttons">
         <Button
-          disabled={!email.inputValid || !password.inputValid}
           type="button"
           appearance="red"
+          disabled={!email.inputValid || !password.inputValid}
         >
           Log in
         </Button>
