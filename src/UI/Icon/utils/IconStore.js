@@ -1,9 +1,10 @@
 import { lazy } from 'react';
 
-import { ReactComponent as DefaultComponent } from './assets/eye.svg';
 import { MAP_PROPS_TO_ICON } from './constants';
 
 import { createRequierContext } from './createRequireContext';
+
+import DefaultComponent from '../assets/eye.svg';
 
 const requireContext = createRequierContext();
 
@@ -17,17 +18,14 @@ export default class IconStore {
 
   get(name) {
     if (this.#cache.has(name)) {
-      console.log('this.#cache.get(name)', this.#cache.get(name));
       return this.#cache.get(name);
     }
     return lazy(async () => {
       try {
         const module = await this.#context(MAP_PROPS_TO_ICON[name]);
-        console.log('module', { default: module });
-        this.#cache.set(name, module);
+        this.#cache.set(name, module.default);
         return module;
       } catch (error) {
-        console.log('err', error);
         return this.#DefaultModuleComponent;
       }
     });
