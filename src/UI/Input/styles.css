@@ -1,0 +1,19 @@
+.input__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input__field {
+  padding: 7px 0;
+  border: none;
+  border-bottom: 1px solid #7d8184;
+  margin-bottom: 5px;
+}
+.input__error {
+  border-color: #ff0606;
+}
+.input__error-message {
+  font-size: 14px;
+  color: #ff0606;
+}

@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.auth {
+  height: 780px;
+  margin-top: 60px;
+  margin-bottom: 140px;
+  font-family: Poppins, Arial, sans-serif;
+  background-image: url('/public/img/AccountImgSide.jpg');
+  background-repeat: no-repeat;
+}
+
+.auth__container {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.auth__title {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.auth__subtitle {
+  margin-bottom: 48px;
+}
+
+.auth__block {
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+}

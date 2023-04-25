@@ -1,4 +1,4 @@
-import SignUpForm from 'components/SignUpForm';
+import SignUpForm from 'components/Forms/AuthorizationForm/SignUpForm';
 
 const SignUp = () => {
   return <SignUpForm />;
