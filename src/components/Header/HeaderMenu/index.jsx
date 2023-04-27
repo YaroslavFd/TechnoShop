@@ -1,8 +1,10 @@
+import { useSelector } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 
 import './styles.css';
 
 const HeaderMenu = () => {
+  const { products } = useSelector((state) => state.favorites);
   return (
     <section className="header-menu">
       <div className="container header-menu__container">
@@ -44,14 +46,16 @@ const HeaderMenu = () => {
             <input className="header-menu__input-loupe" readOnly />
           </div>
           <div className="header-menu__icons">
-            <a href="/#" className="header-menu__icons-heart">
+            <Link className="header-menu__icons-heart" to="/favorites">
               <img src="/img/icons/heart-header.png" alt="heart" />
-              <span className="product-counter">4</span>
-            </a>
-            <NavLink to="/cart" className="header-menu__icons-cart">
+              {products.length > 0 && (
+                <span className="product-counter">{products.length}</span>
+              )}
+            </Link>
+            <Link to="/cart" className="header-menu__icons-cart">
               <img src="/img/icons/cart-header.png" alt="cart" />
               <span className="product-counter">2</span>
-            </NavLink>
+            </Link>
             <a href="/#" className="header-menu__icons-user">
               <img src="/img/icons/user.png" alt="user" />
             </a>

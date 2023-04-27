@@ -1,18 +1,22 @@
+import { Button } from 'UI/Button';
+import { Icon } from 'UI/Icon';
+
 import './styles.css';
 
-const ProductCard = ({ title, price, discount, img }) => {
+const ProductCard = ({ product, addToFavorites }) => {
   return (
     <div className="card">
       <div className="card__block">
-        <img className="card__img" src={img} alt={title} />
-        <div className="card__badge">{`-${discount}%`}</div>
-        <div className="card__box card__box-heart">
-          <img
-            className="card__heart"
-            src="/img/icons/card-heart.svg"
-            alt="heart"
-          />
-        </div>
+        <img className="card__img" src={product.img} alt={product.title} />
+        <div className="card__badge">{`-${product.discount}%`}</div>
+        <Button
+          className="card__box card__box-heart"
+          onClick={addToFavorites}
+          data-product-id={product.id}
+          appearance="icon"
+        >
+          <Icon name="favorites" />
+        </Button>
         <div className="card__box card__box-eye">
           <img className="card__eye" src="/img/icons/card-eye.svg" alt="eye" />
         </div>
@@ -26,11 +30,13 @@ const ProductCard = ({ title, price, discount, img }) => {
         </button>
       </div>
       <a href="/#" className="card__title">
-        {title}
+        {product.title}
       </a>
       <p className="card__price text-red">
-        ${price}
-        <span className="card__price_old">${price * (1 + discount / 100)}</span>
+        ${product.price}
+        <span className="card__price_old">
+          ${product.price * (1 + product.discount / 100)}
+        </span>
       </p>
       <div className="card__rating">
         <svg

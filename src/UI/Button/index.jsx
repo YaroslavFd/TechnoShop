@@ -12,6 +12,7 @@ export const Button = (props) => {
     children,
     onClick,
     disabled,
+    ...anotherProps
   } = props;
 
   return (
@@ -21,12 +22,18 @@ export const Button = (props) => {
         [styles.red]: appearance === 'red',
         [styles.white]: appearance === 'white',
         [styles.green]: appearance === 'green',
+        [styles.icon]: appearance === 'icon',
       })}
       type={type}
       onClick={onClick}
       disabled={disabled}
+      {...anotherProps}
     >
-      <span className={contentClassName}>{children}</span>
+      {appearance === 'icon' ? (
+        children
+      ) : (
+        <span className={contentClassName}>{children}</span>
+      )}
     </button>
   );
 };
