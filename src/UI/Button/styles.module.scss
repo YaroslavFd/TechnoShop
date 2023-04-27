@@ -34,6 +34,14 @@
       background-color: #a0bce0;
     }
   }
+  &.black {
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
   &.icon {
     width: 34px;
     height: 34px;

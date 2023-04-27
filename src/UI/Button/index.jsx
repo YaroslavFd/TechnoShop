@@ -20,6 +20,7 @@ export const Button = (props) => {
       id={id}
       className={cn(styles.button, className, {
         [styles.red]: appearance === 'red',
+        [styles.black]: appearance === 'black',
         [styles.white]: appearance === 'white',
         [styles.green]: appearance === 'green',
         [styles.icon]: appearance === 'icon',
@@ -29,11 +30,7 @@ export const Button = (props) => {
       disabled={disabled}
       {...anotherProps}
     >
-      {appearance === 'icon' ? (
-        children
-      ) : (
-        <span className={contentClassName}>{children}</span>
-      )}
+      {children}
     </button>
   );
 };
