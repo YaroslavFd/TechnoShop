@@ -12,7 +12,7 @@ import { Section } from 'containers/Section';
 import { PRODUCTS } from 'data/products';
 import { useDispatch } from 'react-redux';
 
-const Home = () => {
+const HomePage = () => {
   const dispatch = useDispatch();
   const addToFavoritesHandler = (e) => {
     const id = Number(e.currentTarget.dataset.productId);
@@ -72,4 +72,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
