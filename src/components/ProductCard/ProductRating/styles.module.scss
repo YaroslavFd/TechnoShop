@@ -1,0 +1,12 @@
+.rating {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  .text {
+    margin-left: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #7d8184;
+  }
+}

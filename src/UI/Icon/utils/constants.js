@@ -1,5 +1,6 @@
 export const MAP_PROPS_TO_ICON = {
   cart: './cart.svg',
+  cartWhite: './cart-white.svg',
   eye: './eye.svg',
   cardTrash: './card-trash.svg',
   favorites: './favorites.svg',
