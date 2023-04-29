@@ -1,5 +1,7 @@
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import Breadcrumbs from 'UI/Breadcrumbs';
-import { Button } from 'UI/Button';
+import { Typography } from 'UI/Typography';
 
 import CartCoupon from './CartCoupon';
 import CartProducts from './CartProducts';
@@ -10,6 +12,77 @@ import { PRODUCTS } from './data';
 import './styles.css';
 
 const Cart = () => {
+  const [products, setProducts] = useState(PRODUCTS);
+  const [couponValue, setCouponValue] = useState('');
+  const [isCoupon, setIsCoupon] = useState(false);
+
+  const deleteProduct = (e) => {
+    const id = +e.currentTarget
+      .closest('.cart__block-row')
+      .getAttribute('data-product-id');
+    setProducts(products.filter((item) => id !== item.id));
+  };
+
+  const increase = (e) => {
+    const id = +e.currentTarget
+      .closest('.cart__block-row')
+      .getAttribute('data-product-id');
+    setProducts((products) => {
+      return products.map((product) => {
+        if (product.id === id) {
+          const newCount = product.count + 1 > 100 ? 100 : ++product.count;
+          return {
+            ...product,
+            count: newCount,
+            totalPrice: newCount * product.price,
+          };
+        }
+        return product;
+      });
+    });
+  };
+
+  const decrease = (e) => {
+    const id = +e.currentTarget
+      .closest('.cart__block-row')
+      .getAttribute('data-product-id');
+    setProducts((products) => {
+      return products.map((product) => {
+        if (product.id === id) {
+          const newCount = product.count - 1 > 1 ? product.count - 1 : 1;
+          return {
+            ...product,
+            count: newCount,
+            totalPrice: newCount * product.price,
+          };
+        }
+        return product;
+      });
+    });
+  };
+
+  const changeValue = (e) => {
+    const id = +e.currentTarget
+      .closest('.cart__block-row')
+      .getAttribute('data-product-id');
+
+    const value = +e.target.value;
+
+    setProducts((products) => {
+      return products.map((product) => {
+        if (product.id === id) {
+          const newValue = value !== 0 ? (value > 100 ? 100 : value) : 1;
+          return {
+            ...product,
+            count: newValue,
+            totalPrice: newValue * product.price,
+          };
+        }
+        return product;
+      });
+    });
+  };
+
   return (
     <>
       <Breadcrumbs
@@ -20,17 +93,33 @@ const Cart = () => {
       />
 
       <div className="cart__box">
-        <CartTitles />
-        <CartProducts products={PRODUCTS} />
+        {products.length ? (
+          <CartTitles />
+        ) : (
+          <Typography>
+            <h3 style={{ marginBottom: 30 }}>Корзина пуста</h3>
+          </Typography>
+        )}
 
-        <div className="cart__block cart__block-buttons">
-          <Button appearance="white">Return To Shop</Button>
-          <Button appearance="white">Update Cart</Button>
+        <CartProducts
+          products={products}
+          deleteProduct={deleteProduct}
+          increase={increase}
+          decrease={decrease}
+          changeValue={changeValue}
+        />
+
+        <div className="cart__block-link">
+          <NavLink to="/">Return To Shop</NavLink>
         </div>
 
         <div className="cart__block">
-          <CartCoupon />
-          <CartTotal />
+          <CartCoupon
+            value={couponValue}
+            setIsCoupon={setIsCoupon}
+            setCouponValue={setCouponValue}
+          />
+          <CartTotal isCoupon={isCoupon} products={products} />
         </div>
       </div>
     </>

@@ -1,6 +1,5 @@
 .cart {
-  margin-top: 80px;
-  margin-bottom: 140px;
+  margin: 80px 0 140px;
 }
 .cart .section__title {
   margin-bottom: 0px;
@@ -10,9 +9,27 @@
   padding: 0 40px;
 }
 
-.cart__block-buttons {
-  margin-top: 24px;
-  margin-bottom: 80px;
+.cart__block-link {
+  margin: 24px 0 80px;
+}
+
+.cart__block-link a {
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #7d8184;
+  padding: 16px 48px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+
+.cart__block-link a:hover  {
+  color: #ffffff;
+  background-color: #db4444;
+  border-color: transparent;
 }
 
 .cart__block {

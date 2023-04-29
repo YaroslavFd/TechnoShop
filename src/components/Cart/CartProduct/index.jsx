@@ -1,10 +1,23 @@
 import './styles.css';
 
-const CartProduct = ({ name, src, price, count, totalPrice }) => {
+const CartProduct = ({
+  name,
+  src,
+  price,
+  count,
+  id,
+  totalPrice,
+  deleteProduct,
+  increase,
+  decrease,
+  changeValue,
+}) => {
   return (
-    <div className="cart__block-row">
+    <div className="cart__block-row" data-product-id={id}>
       <div className="cart__item">
-        <button className="icon-cancel">✖</button>
+        <button className="icon-cancel" onClick={deleteProduct}>
+          ✖
+        </button>
         <img className="cart-image" src={src} alt="LCD Monitor" />
         <span className="cart__item-name">${name}</span>
       </div>
@@ -12,15 +25,20 @@ const CartProduct = ({ name, src, price, count, totalPrice }) => {
 
       <div className="cart__item">
         <label className="cart__item-quantity">
-          <input className="cart__item-input" type="number" value={count} />
-          <button className="cart_arrow_up">
+          <input
+            className="cart__item-input"
+            type="number"
+            value={count}
+            onChange={changeValue}
+          />
+          <button className="cart_arrow_up" onClick={increase}>
             <img
               className="cart_arrow_up-img"
               src="/img/icons/arrow-up.svg"
               alt="arrow up"
             />
           </button>
-          <button className="cart_arrow_down">
+          <button className="cart_arrow_down" onClick={decrease}>
             <img
               className="cart_arrow_down-img"
               src="/img/icons/arrow-down.svg"

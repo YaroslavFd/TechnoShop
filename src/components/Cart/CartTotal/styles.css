@@ -42,3 +42,8 @@
 .cart__total-button {
   margin: 0 auto;
 }
+
+.coupon {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
