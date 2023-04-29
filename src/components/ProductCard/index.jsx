@@ -1,4 +1,9 @@
+import {
+  addFavorite,
+  removeFavorite,
+} from 'app/store/favorites/favoritesSlice';
 import cn from 'classnames';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button } from 'UI/Button';
 import { Icon } from 'UI/Icon';
@@ -8,14 +13,28 @@ import { ProductRating } from './ProductRating';
 import styles from './styles.module.scss';
 
 const ProductCard = ({ product, addToFavorites, addToCart }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.products);
+  const isFavorite = favorites.some((p) => p.id === product.id);
+
+  const handleAddToFavorites = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite({ id: product.id }));
+    } else {
+      dispatch(addFavorite(product));
+    }
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.block}>
         <img className={styles.img} src={product.img} alt={product.title} />
         <div className={styles.badge}>{`-${product.discount}%`}</div>
         <Button
-          className={cn(styles.boxBtn, styles.addToFavoriteBtn)}
-          onClick={addToFavorites}
+          className={cn(styles.boxBtn, styles.addToFavoriteBtn, {
+            [styles.favorite]: isFavorite,
+          })}
+          onClick={handleAddToFavorites}
           data-product-id={product.id}
           appearance="icon"
         >
@@ -23,7 +42,7 @@ const ProductCard = ({ product, addToFavorites, addToCart }) => {
         </Button>
         <Button
           className={cn(styles.boxBtn, styles.eyeBtn)}
-          onClick={addToFavorites}
+          onClick={handleAddToFavorites}
           data-product-id={product.id}
           appearance="icon"
         >

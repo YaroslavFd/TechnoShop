@@ -1,5 +1,4 @@
 import { addProduct } from 'app/store/cart/cartSlice';
-import { addFavorite } from 'app/store/favorites/favoritesSlice';
 import Banner from 'components/Banner';
 import { CATEGORIES } from 'components/CategoriesList/constants';
 import CategoryCard from 'components/CategoryCard';
@@ -15,15 +14,6 @@ import { useDispatch } from 'react-redux';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const addToFavoritesHandler = (e) => {
-    const id = Number(e.currentTarget.dataset.productId);
-    const findProduct = PRODUCTS.find((p) => p.id === id);
-    if (findProduct) {
-      dispatch(addFavorite(findProduct));
-    } else {
-      throw Error('Что то пошло не так');
-    }
-  };
 
   const addToCart = (e) => {
     const id = Number(e.currentTarget.dataset.productId);
@@ -55,7 +45,6 @@ const HomePage = () => {
           <ProductCard
             key={`product-${product.id}`}
             product={product}
-            addToFavorites={addToFavoritesHandler}
             addToCart={addToCart}
           />
         ))}
