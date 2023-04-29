@@ -5,9 +5,9 @@ import './styles.css';
 const CartProducts = ({
   products,
   deleteProduct,
+  changeValue,
   increase,
   decrease,
-  changeValue,
 }) => {
   return (
     <div className="cart__block cart__block-list text">
@@ -21,10 +21,10 @@ const CartProducts = ({
             price={product.price}
             count={product.count}
             totalPrice={product.totalPrice}
-            deleteProduct={deleteProduct}
-            increase={increase}
-            decrease={decrease}
-            changeValue={changeValue}
+            deleteProduct={() => deleteProduct(product.id)}
+            increase={() => increase(product.id)}
+            decrease={() => decrease(product.id)}
+            changeValue={(value) => changeValue(product.id, value)}
           />
         );
       })}

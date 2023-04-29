@@ -1,86 +1,45 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Breadcrumbs from 'UI/Breadcrumbs';
 import { Typography } from 'UI/Typography';
 
 import CartCoupon from './CartCoupon';
 import CartProducts from './CartProducts';
+
 import CartTitles from './CartTitles';
 import CartTotal from './CartTotal';
-import { PRODUCTS } from './data';
+
+import {
+  changeValue,
+  decrease,
+  deleteProduct,
+  increase,
+  setCouponValue,
+  setIsCoupon,
+} from '../../app/store/cart/cartSlice';
 
 import './styles.css';
 
 const Cart = () => {
-  const [products, setProducts] = useState(PRODUCTS);
-  const [couponValue, setCouponValue] = useState('');
-  const [isCoupon, setIsCoupon] = useState(false);
+  const products = useSelector((state) => state.cart.products);
+  const couponValue = useSelector((state) => state.cart.couponValue);
+  const isCoupon = useSelector((state) => state.cart.isCoupon);
+  const dispatch = useDispatch();
 
-  const deleteProduct = (e) => {
-    const id = +e.currentTarget
-      .closest('.cart__block-row')
-      .getAttribute('data-product-id');
-    setProducts(products.filter((item) => id !== item.id));
+  const handleDeleteProduct = (id) => {
+    dispatch(deleteProduct(id));
   };
 
-  const increase = (e) => {
-    const id = +e.currentTarget
-      .closest('.cart__block-row')
-      .getAttribute('data-product-id');
-    setProducts((products) => {
-      return products.map((product) => {
-        if (product.id === id) {
-          const newCount = product.count + 1 > 100 ? 100 : ++product.count;
-          return {
-            ...product,
-            count: newCount,
-            totalPrice: newCount * product.price,
-          };
-        }
-        return product;
-      });
-    });
+  const handleIncrease = (id) => {
+    dispatch(increase(id));
   };
 
-  const decrease = (e) => {
-    const id = +e.currentTarget
-      .closest('.cart__block-row')
-      .getAttribute('data-product-id');
-    setProducts((products) => {
-      return products.map((product) => {
-        if (product.id === id) {
-          const newCount = product.count - 1 > 1 ? product.count - 1 : 1;
-          return {
-            ...product,
-            count: newCount,
-            totalPrice: newCount * product.price,
-          };
-        }
-        return product;
-      });
-    });
+  const handleDecrease = (id) => {
+    dispatch(decrease(id));
   };
 
-  const changeValue = (e) => {
-    const id = +e.currentTarget
-      .closest('.cart__block-row')
-      .getAttribute('data-product-id');
-
-    const value = +e.target.value;
-
-    setProducts((products) => {
-      return products.map((product) => {
-        if (product.id === id) {
-          const newValue = value !== 0 ? (value > 100 ? 100 : value) : 1;
-          return {
-            ...product,
-            count: newValue,
-            totalPrice: newValue * product.price,
-          };
-        }
-        return product;
-      });
-    });
+  const handleChangeValue = (id, value) => {
+    dispatch(changeValue({ id, count: value }));
   };
 
   return (
@@ -103,10 +62,10 @@ const Cart = () => {
 
         <CartProducts
           products={products}
-          deleteProduct={deleteProduct}
-          increase={increase}
-          decrease={decrease}
-          changeValue={changeValue}
+          deleteProduct={handleDeleteProduct}
+          increase={handleIncrease}
+          decrease={handleDecrease}
+          changeValue={handleChangeValue}
         />
 
         <div className="cart__block-link">
@@ -116,8 +75,8 @@ const Cart = () => {
         <div className="cart__block">
           <CartCoupon
             value={couponValue}
-            setIsCoupon={setIsCoupon}
-            setCouponValue={setCouponValue}
+            setIsCoupon={() => dispatch(setIsCoupon(true))}
+            setCouponValue={(value) => dispatch(setCouponValue(value))}
           />
           <CartTotal isCoupon={isCoupon} products={products} />
         </div>

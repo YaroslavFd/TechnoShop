@@ -4,7 +4,8 @@ import { Link, NavLink } from 'react-router-dom';
 import './styles.css';
 
 const HeaderMenu = () => {
-  const { products } = useSelector((state) => state.favorites);
+  const productsFavorites = useSelector((state) => state.favorites.products);
+  const productsCart = useSelector((state) => state.cart.products);
   return (
     <section className="header-menu">
       <div className="container header-menu__container">
@@ -48,13 +49,17 @@ const HeaderMenu = () => {
           <div className="header-menu__icons">
             <Link className="header-menu__icons-heart" to="/favorites">
               <img src="/img/icons/heart-header.png" alt="heart" />
-              {products.length > 0 && (
-                <span className="product-counter">{products.length}</span>
+              {productsFavorites.length > 0 && (
+                <span className="product-counter">
+                  {productsFavorites.length}
+                </span>
               )}
             </Link>
             <Link to="/cart" className="header-menu__icons-cart">
               <img src="/img/icons/cart-header.png" alt="cart" />
-              <span className="product-counter">2</span>
+              {productsCart.length > 0 && (
+                <span className="product-counter">{productsCart.length}</span>
+              )}
             </Link>
             <a href="/#" className="header-menu__icons-user">
               <img src="/img/icons/user.png" alt="user" />

@@ -29,7 +29,7 @@ const CartProduct = ({
             className="cart__item-input"
             type="number"
             value={count}
-            onChange={changeValue}
+            onChange={(event) => changeValue(event.target.value)}
           />
           <button className="cart_arrow_up" onClick={increase}>
             <img
