@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { Button } from 'UI/Button';
 
 import './styles.css';
 
 const couponName = 'REACT<3';
 
-const CartCoupon = ({ value, setIsCoupon, setCouponValue }) => {
+const CartCoupon = ({ setIsCoupon }) => {
+  const [couponValue, setCouponValue] = useState('');
+
   const applyCoupon = (e, value) => {
     e.preventDefault();
 
@@ -19,17 +22,20 @@ const CartCoupon = ({ value, setIsCoupon, setCouponValue }) => {
   };
 
   return (
-    <form className="cart__coupon" onSubmit={(e) => applyCoupon(e, value)}>
+    <form
+      className="cart__coupon"
+      onSubmit={(e) => applyCoupon(e, couponValue)}
+    >
       <input
         className="cart__coupon_input"
         type="text"
         placeholder="Coupon Code"
-        value={value}
+        value={couponValue}
         onChange={(e) => changeCouponValue(e.target.value)}
       />
       <Button
         className="cart__coupon_button"
-        onClick={(e) => applyCoupon(e, value)}
+        onClick={(e) => applyCoupon(e, couponValue)}
       >
         Apply Coupon
       </Button>

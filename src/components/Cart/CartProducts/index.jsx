@@ -7,24 +7,39 @@ const CartProducts = ({
   deleteProduct,
   increase,
   decrease,
-  changeValue,
+  // changeValue,
 }) => {
+  const handleDeleteProduct = (event) => {
+    const id = Number(event.currentTarget.dataset.productId);
+    deleteProduct(id);
+  };
+
+  const handleIncrease = (event) => {
+    const id = Number(event.currentTarget.dataset.productId);
+    increase(id);
+  };
+
+  const handleDecrease = (event) => {
+    const id = Number(event.currentTarget.dataset.productId);
+    decrease(id);
+  };
+
   return (
     <div className="cart__block cart__block-list text">
       {products.map((product) => {
         return (
           <CartProduct
             key={product.id}
-            name={product.name}
+            name={product.title}
             id={product.id}
-            src={product.src}
+            src={product.img}
             price={product.price}
             count={product.count}
             totalPrice={product.totalPrice}
-            deleteProduct={deleteProduct}
-            increase={increase}
-            decrease={decrease}
-            changeValue={changeValue}
+            deleteProduct={handleDeleteProduct}
+            increase={handleIncrease}
+            decrease={handleDecrease}
+            // changeValue={(value) => changeValue(product.id, value)}
           />
         );
       })}
