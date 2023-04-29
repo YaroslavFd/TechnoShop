@@ -7,7 +7,7 @@ import { ProductRating } from './ProductRating';
 
 import styles from './styles.module.scss';
 
-const ProductCard = ({ product, addToFavorites }) => {
+const ProductCard = ({ product, addToFavorites, addToCart }) => {
   return (
     <div className={styles.card}>
       <div className={styles.block}>
@@ -29,7 +29,12 @@ const ProductCard = ({ product, addToFavorites }) => {
         >
           <Icon name="eye" />
         </Button>
-        <Button className={styles.addToCartBtn} appearance="black">
+        <Button
+          className={styles.addToCartBtn}
+          data-product-id={product.id}
+          appearance="black"
+          onClick={addToCart}
+        >
           <Icon className={styles.cartIcon} name="cartWhite" />
           Add To Cart
         </Button>

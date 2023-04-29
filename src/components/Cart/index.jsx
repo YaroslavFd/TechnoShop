@@ -39,7 +39,7 @@ const Cart = () => {
   };
 
   const handleChangeValue = (id, value) => {
-    dispatch(changeValue({ id, count: value }));
+    dispatch(changeValue({ id, count: Number(value) }));
   };
 
   return (

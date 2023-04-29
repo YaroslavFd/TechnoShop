@@ -1,3 +1,4 @@
+import { addProduct } from 'app/store/cart/cartSlice';
 import { addFavorite } from 'app/store/favorites/favoritesSlice';
 import Banner from 'components/Banner';
 import { CATEGORIES } from 'components/CategoriesList/constants';
@@ -23,6 +24,17 @@ const HomePage = () => {
       throw Error('Что то пошло не так');
     }
   };
+
+  const addToCart = (e) => {
+    const id = Number(e.currentTarget.dataset.productId);
+    const findProduct = PRODUCTS.find((p) => p.id === id);
+    if (findProduct) {
+      dispatch(addProduct(findProduct));
+    } else {
+      throw Error('Что то пошло не так');
+    }
+  };
+
   return (
     <>
       <Section className="mb-140" classNameContainer="d-flex">
@@ -44,6 +56,7 @@ const HomePage = () => {
             key={`product-${product.id}`}
             product={product}
             addToFavorites={addToFavoritesHandler}
+            addToCart={addToCart}
           />
         ))}
       </ProductsSlider>

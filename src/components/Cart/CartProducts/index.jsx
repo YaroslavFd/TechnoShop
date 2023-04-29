@@ -2,13 +2,12 @@ import CartProduct from '../CartProduct';
 
 import './styles.css';
 
-const CartProducts = ({
-  products,
-  deleteProduct,
-  changeValue,
-  increase,
-  decrease,
-}) => {
+const CartProducts = ({ products, deleteProduct, increase, decrease }) => {
+  const handleDeleteProduct = (event) => {
+    const id = Number(event.currentTarget.dataset.productId);
+    deleteProduct(id);
+  };
+
   return (
     <div className="cart__block cart__block-list text">
       {products.map((product) => {
@@ -21,10 +20,10 @@ const CartProducts = ({
             price={product.price}
             count={product.count}
             totalPrice={product.totalPrice}
-            deleteProduct={() => deleteProduct(product.id)}
+            deleteProduct={handleDeleteProduct}
             increase={() => increase(product.id)}
             decrease={() => decrease(product.id)}
-            changeValue={(value) => changeValue(product.id, value)}
+            // changeValue={(value) => changeValue(product.id, value)}
           />
         );
       })}

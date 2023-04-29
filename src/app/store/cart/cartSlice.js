@@ -42,20 +42,20 @@ const cartSlice = createSlice({
         return product;
       });
     },
-    changeValue: (state, action) => {
-      const { id, value } = action.payload;
-      state.products = state.products.map((product) => {
-        if (product.id === id) {
-          const newValue = value !== 0 ? (value > 100 ? 100 : value) : 1;
-          return {
-            ...product,
-            count: newValue,
-            totalPrice: newValue * product.price,
-          };
-        }
-        return product;
-      });
-    },
+    // changeValue: (state, action) => {
+    //   const { id, value } = action.payload;
+    //   state.products = state.products.map((product) => {
+    //     if (product.id === id) {
+    //       const newValue = value !== 0 ? (value > 100 ? 100 : value) : 1;
+    //       return {
+    //         ...product,
+    //         count: newValue,
+    //         totalPrice: newValue * product.price,
+    //       };
+    //     }
+    //     return product;
+    //   });
+    // },
     setCouponValue: (state, action) => {
       state.couponValue = action.payload;
     },
@@ -64,7 +64,7 @@ const cartSlice = createSlice({
     },
     addProduct: (state, action) => {
       const product = action.payload;
-      state.products = [...state.products, product];
+      state.products.push(product);
     },
   },
 });
