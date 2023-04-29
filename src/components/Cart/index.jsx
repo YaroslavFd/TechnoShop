@@ -10,11 +10,9 @@ import CartTitles from './CartTitles';
 import CartTotal from './CartTotal';
 
 import {
-  changeValue,
   decrease,
   deleteProduct,
   increase,
-  setCouponValue,
   setIsCoupon,
 } from '../../app/store/cart/cartSlice';
 
@@ -22,7 +20,6 @@ import './styles.css';
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.products);
-  const couponValue = useSelector((state) => state.cart.couponValue);
   const isCoupon = useSelector((state) => state.cart.isCoupon);
   const dispatch = useDispatch();
 
@@ -38,9 +35,9 @@ const Cart = () => {
     dispatch(decrease(id));
   };
 
-  const handleChangeValue = (id, value) => {
-    dispatch(changeValue({ id, count: Number(value) }));
-  };
+  // const handleChangeValue = (id, value) => {
+  //   dispatch(changeValue({ id, count: Number(value) }));
+  // };
 
   return (
     <>
@@ -65,7 +62,7 @@ const Cart = () => {
           deleteProduct={handleDeleteProduct}
           increase={handleIncrease}
           decrease={handleDecrease}
-          changeValue={handleChangeValue}
+          // changeValue={handleChangeValue}
         />
 
         <div className="cart__block-link">
@@ -73,11 +70,7 @@ const Cart = () => {
         </div>
 
         <div className="cart__block">
-          <CartCoupon
-            value={couponValue}
-            setIsCoupon={() => dispatch(setIsCoupon(true))}
-            setCouponValue={(value) => dispatch(setCouponValue(value))}
-          />
+          <CartCoupon setIsCoupon={() => dispatch(setIsCoupon(true))} />
           <CartTotal isCoupon={isCoupon} products={products} />
         </div>
       </div>

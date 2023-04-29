@@ -5,6 +5,8 @@ export const PRODUCTS = [
     price: 120,
     discount: 40,
     img: '/img/products/1.png',
+    count: 1,
+    totalPrice: 120,
   },
   {
     id: 2,
@@ -12,6 +14,8 @@ export const PRODUCTS = [
     price: 960,
     discount: 35,
     img: '/img/products/2.png',
+    count: 1,
+    totalPrice: 960,
   },
   {
     id: 3,
@@ -19,6 +23,8 @@ export const PRODUCTS = [
     price: 370,
     discount: 30,
     img: '/img/products/3.png',
+    count: 1,
+    totalPrice: 370,
   },
   {
     id: 4,
@@ -26,6 +32,8 @@ export const PRODUCTS = [
     price: 375,
     discount: 25,
     img: '/img/products/4.png',
+    count: 1,
+    totalPrice: 375,
   },
   {
     id: 5,
@@ -33,6 +41,8 @@ export const PRODUCTS = [
     price: 375,
     discount: 25,
     img: '/img/products/4.png',
+    count: 1,
+    totalPrice: 375,
   },
   {
     id: 6,
@@ -40,6 +50,8 @@ export const PRODUCTS = [
     price: 375,
     discount: 25,
     img: '/img/products/4.png',
+    count: 1,
+    totalPrice: 375,
   },
   {
     id: 7,
@@ -47,5 +59,7 @@ export const PRODUCTS = [
     price: 375,
     discount: 25,
     img: '/img/products/4.png',
+    count: 1,
+    totalPrice: 375,
   },
 ];

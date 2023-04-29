@@ -1,12 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { PRODUCTS } from '../../../components/Cart/data';
-
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    products: PRODUCTS,
-    couponValue: '',
+    products: [],
     isCoupon: false,
   },
   reducers: {
@@ -56,15 +53,20 @@ const cartSlice = createSlice({
     //     return product;
     //   });
     // },
-    setCouponValue: (state, action) => {
-      state.couponValue = action.payload;
-    },
+
     setIsCoupon: (state, action) => {
       state.isCoupon = action.payload;
     },
     addProduct: (state, action) => {
       const product = action.payload;
-      state.products.push(product);
+      const index = state.products.findIndex((item) => item.id === product.id);
+      if (index >= 0) {
+        state.products[index].count += 1;
+        state.products[index].totalPrice =
+          state.products[index].count * state.products[index].price;
+      } else {
+        state.products.push(product);
+      }
     },
   },
 });
@@ -74,7 +76,6 @@ export const {
   increase,
   decrease,
   changeValue,
-  setCouponValue,
   setIsCoupon,
   addProduct,
 } = cartSlice.actions;

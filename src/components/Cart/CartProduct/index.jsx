@@ -21,8 +21,8 @@ const CartProduct = ({
         >
           ✖
         </button>
-        <img className="cart-image" src={src} alt="LCD Monitor" />
-        <span className="cart__item-name">${name}</span>
+        <img className="cart-image" src={src} alt={name} />
+        <span className="cart__item-name">{name}</span>
       </div>
       <div className="cart__item">${price}</div>
 
