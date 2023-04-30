@@ -50,29 +50,32 @@ const Cart = () => {
 
       <div className="cart__box">
         {products.length ? (
-          <CartTitles />
+          <>
+            <CartTitles />
+            <CartProducts
+              products={products}
+              deleteProduct={handleDeleteProduct}
+              increase={handleIncrease}
+              decrease={handleDecrease}
+              // changeValue={handleChangeValue}
+            />
+          </>
         ) : (
           <Typography>
             <h3 style={{ marginBottom: 30 }}>Корзина пуста</h3>
           </Typography>
         )}
 
-        <CartProducts
-          products={products}
-          deleteProduct={handleDeleteProduct}
-          increase={handleIncrease}
-          decrease={handleDecrease}
-          // changeValue={handleChangeValue}
-        />
-
         <div className="cart__block-link">
           <NavLink to="/">Return To Shop</NavLink>
         </div>
 
-        <div className="cart__block">
-          <CartCoupon setIsCoupon={() => dispatch(setIsCoupon(true))} />
-          <CartTotal isCoupon={isCoupon} products={products} />
-        </div>
+        {products.length ? (
+          <div className="cart__block">
+            <CartCoupon setIsCoupon={() => dispatch(setIsCoupon(true))} />
+            <CartTotal isCoupon={isCoupon} products={products} />
+          </div>
+        ) : null}
       </div>
     </>
   );
