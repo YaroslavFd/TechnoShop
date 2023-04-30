@@ -1,3 +1,5 @@
+import { formatter } from 'utils/currencyFormatter';
+
 import './styles.css';
 
 const CartProduct = ({
@@ -24,7 +26,7 @@ const CartProduct = ({
         <img className="cart-image" src={src} alt={name} />
         <span className="cart__item-name">{name}</span>
       </div>
-      <div className="cart__item">${price}</div>
+      <div className="cart__item">{formatter.format(price)}</div>
 
       <div className="cart__item">
         <label className="cart__item-quantity">
@@ -59,7 +61,7 @@ const CartProduct = ({
         </label>
       </div>
 
-      <div className="cart__item">${totalPrice}</div>
+      <div className="cart__item">{formatter.format(totalPrice)}</div>
     </div>
   );
 };
