@@ -1,15 +1,13 @@
-.contact__contact-us {
+.contactUs {
   width: 262px;
 }
 
-
-.contact__call-us {
+.callUs {
   margin-bottom: 32px;
   padding-bottom: 16px;
   border-bottom: 1px solid #7D8184;
 }
-
-.contact__title-box {
+.titleBox {
   margin-bottom: 24px;
   display: flex;
   align-items: center;
@@ -19,8 +17,8 @@
   line-height: 24px;
 }
 
-.contact__icon-box_red,
-.contact__icon-box_black {
+.iconBoxRed,
+.iconBoxBlack {
   width: 40px;
   height: 40px;
   display: flex;
@@ -29,26 +27,26 @@
   border-radius: 50%;
 }
 
-.contact__icon-box_red {
+.iconBoxRed {
   background-color: #DB4444;
 }
 
-.contact__icon-box_black {
+.iconBoxBlack {
   background-color: #3D3D3D;
 }
 
-.contact__icon {
+.icon {
   width: 20px;
 }
 
-.contact__text {
+.text {
   margin-bottom: 16px;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
 }
 
-.contact__phone-link,
-.contact__email-link {
+.phoneLink,
+.emailLink {
   color: #000000;
 }

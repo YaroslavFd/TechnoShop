@@ -3,7 +3,7 @@ import Breadcrumbs from 'UI/Breadcrumbs';
 import ContactAside from './ContactAside';
 import ContactForm from './ContactForm';
 
-import './styles.css';
+import styles from './styles.module.scss';
 
 const Contact = () => {
   return (
@@ -15,7 +15,7 @@ const Contact = () => {
         ]}
       />
 
-      <div className="contact__box">
+      <div className={styles.box}>
         <ContactAside />
         <ContactForm />
       </div>
