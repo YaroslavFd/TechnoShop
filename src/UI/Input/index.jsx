@@ -2,11 +2,17 @@ import cn from 'classnames';
 
 import './styles.css';
 
-const Input = ({ name, type, placeholder, required }) => {
+const Input = ({
+  name,
+  type,
+  placeholder,
+  required,
+  inputClass = 'input__field',
+}) => {
   return (
     <div className="input__wrapper">
       <input
-        className={cn('input__field', { input__error: name.error })}
+        className={cn(inputClass, { input__error: name.error })}
         type={type}
         placeholder={placeholder}
         required={required}

@@ -10,6 +10,14 @@
   border-bottom: 1px solid #7d8184;
   margin-bottom: 5px;
 }
+.input__grey {
+  padding: 13px 16px;
+  display: block;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+}
+
 .input__error {
   border-color: #ff0606;
 }

@@ -1,0 +1,12 @@
+.contact {
+  margin: 80px 0 180px;
+}
+.contact .section__title {
+  margin-bottom: 0;
+}
+.contact__box {
+  padding-top: 120px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
