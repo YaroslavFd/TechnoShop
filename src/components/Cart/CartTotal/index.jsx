@@ -1,6 +1,8 @@
 import { Button } from 'UI/Button';
 import { formatter } from 'utils/currencyFormatter';
 
+import { CartPrice } from '../CartPrice';
+
 import './styles.css';
 
 const costShipping = 50;
@@ -10,6 +12,8 @@ const CartTotal = ({ isCoupon, products }) => {
     return prev + curr.totalPrice;
   }, 0);
 
+  const total = totalPrice < 300 ? totalPrice : totalPrice + costShipping;
+
   const priceWithCoupon = formatter.format(totalPrice * 0.8);
   return (
     <div className="cart__total">
@@ -18,17 +22,13 @@ const CartTotal = ({ isCoupon, products }) => {
         <div className="cart__total-item cart__total-line">
           <p className="cart__total-text">Subtotal:</p>
           <div className="cart__total-price">
-            {formatter.format(totalPrice)}
+            <CartPrice price={totalPrice} />
           </div>
         </div>
         <div className="cart__total-item cart__total-line">
           <p className="cart__total-text">Shipping:</p>
           <div className="cart__total-price">
-            {totalPrice > 300
-              ? 'Free'
-              : totalPrice !== 0
-              ? formatter.format(costShipping)
-              : '$0'}
+            {totalPrice < 300 ? 'Free' : formatter.format(costShipping)}
           </div>
         </div>
         <div className="cart__total-item">
@@ -39,11 +39,7 @@ const CartTotal = ({ isCoupon, products }) => {
                 isCoupon ? 'cart__total-price coupon' : 'cart__total-price'
               }
             >
-              {totalPrice > 300
-                ? formatter.format(totalPrice)
-                : totalPrice !== 0
-                ? formatter.format(totalPrice + costShipping)
-                : 0}
+              <CartPrice price={total} />
             </div>
             {isCoupon && (
               <div className="cart__total-price--new">{priceWithCoupon}</div>

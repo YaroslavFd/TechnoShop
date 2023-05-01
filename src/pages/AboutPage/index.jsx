@@ -1,5 +1,11 @@
+import { Section } from 'containers/Section';
+
 const AboutPage = () => {
-  return <h1>About</h1>;
+  return (
+    <Section>
+      <h1>About page in develop</h1>
+    </Section>
+  );
 };
 
 export default AboutPage;
