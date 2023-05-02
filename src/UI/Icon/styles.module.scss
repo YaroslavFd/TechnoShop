@@ -1,0 +1,11 @@
+.icon {
+  path {
+    stroke: #000000;
+  }
+  &.active {
+    fill: #db4444;
+    path {
+      stroke: #db4444;
+    }
+  }
+}

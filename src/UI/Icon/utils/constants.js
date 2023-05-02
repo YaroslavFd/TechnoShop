@@ -26,4 +26,5 @@ export const MAP_PROPS_TO_ICON = {
   serviceFast: './service-fast.svg',
   serviceMoney: './service-money.svg',
   serviceCustomer: './service-customer.svg',
+  trash: './card-trash.svg',
 };

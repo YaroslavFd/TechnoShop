@@ -1,4 +1,6 @@
 import cn from 'classnames';
+import React, { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import { Button } from 'UI/Button';
 import { Icon } from 'UI/Icon';
@@ -7,7 +9,13 @@ import { ProductRating } from './ProductRating';
 
 import styles from './styles.module.scss';
 
-const ProductCard = ({ product, addToFavorites, addToCart }) => {
+const ProductCard = ({
+  product,
+  addToFavorites,
+  removeFromFavorites,
+  addToCart,
+  isFavorite,
+}) => {
   return (
     <div className={styles.card}>
       <div className={styles.block}>
@@ -15,15 +23,17 @@ const ProductCard = ({ product, addToFavorites, addToCart }) => {
         <div className={styles.badge}>{`-${product.discount}%`}</div>
         <Button
           className={cn(styles.boxBtn, styles.addToFavoriteBtn)}
-          onClick={addToFavorites}
+          onClick={addToFavorites ? addToFavorites : removeFromFavorites}
           data-product-id={product.id}
           appearance="icon"
         >
-          <Icon name="favorites" />
+          <Icon
+            name={addToFavorites ? 'favorites' : 'trash'}
+            isActive={isFavorite}
+          />
         </Button>
         <Button
           className={cn(styles.boxBtn, styles.eyeBtn)}
-          onClick={addToFavorites}
           data-product-id={product.id}
           appearance="icon"
         >
