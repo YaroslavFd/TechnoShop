@@ -1,5 +1,8 @@
 import { addProduct } from 'app/store/cart/cartSlice';
-import { addFavorite } from 'app/store/favorites/favoritesSlice';
+import {
+  addFavorite,
+  removeFavorite,
+} from 'app/store/favorites/favoritesSlice';
 import Banner from 'components/Banner';
 import { CATEGORIES } from 'components/CategoriesList/constants';
 import CategoryCard from 'components/CategoryCard';
@@ -11,19 +14,11 @@ import PromoSlider from 'components/PromoSlider';
 import Services from 'components/Services';
 import { Section } from 'containers/Section';
 import { PRODUCTS } from 'data/products';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const HomePage = () => {
+  const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
-  const addToFavoritesHandler = (e) => {
-    const id = Number(e.currentTarget.dataset.productId);
-    const findProduct = PRODUCTS.find((p) => p.id === id);
-    if (findProduct) {
-      dispatch(addFavorite(findProduct));
-    } else {
-      throw Error('Что то пошло не так');
-    }
-  };
 
   const addToCart = (e) => {
     const id = Number(e.currentTarget.dataset.productId);
@@ -32,6 +27,22 @@ const HomePage = () => {
       dispatch(addProduct(findProduct));
     } else {
       throw Error('Что то пошло не так');
+    }
+  };
+
+  const addToFavoritesHandler = (e) => {
+    const id = Number(e.currentTarget.dataset.productId);
+    const findProduct = PRODUCTS.find((p) => p.id === id);
+    const isFavorite = favorites.products.some((p) => p.id === id);
+
+    if (!findProduct) {
+      throw Error('Что то пошло не так');
+    }
+
+    if (findProduct && !isFavorite) {
+      dispatch(addFavorite(findProduct));
+    } else {
+      dispatch(removeFavorite({ id }));
     }
   };
 
@@ -51,14 +62,20 @@ const HomePage = () => {
         subtitle="Flash Sales"
         withTimer
       >
-        {PRODUCTS.map((product) => (
-          <ProductCard
-            key={`product-${product.id}`}
-            product={product}
-            addToFavorites={addToFavoritesHandler}
-            addToCart={addToCart}
-          />
-        ))}
+        {PRODUCTS.map((product) => {
+          const isFavorite = favorites.products.some(
+            (fav) => fav.id === product.id
+          );
+          return (
+            <ProductCard
+              key={`product-${product.id}`}
+              product={product}
+              addToFavorites={addToFavoritesHandler}
+              addToCart={addToCart}
+              isFavorite={isFavorite}
+            />
+          );
+        })}
       </ProductsSlider>
       <ProductsSlider
         length={CATEGORIES.length}
