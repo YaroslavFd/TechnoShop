@@ -9,11 +9,10 @@
   &.red {
     background-color: #db4444;
     color: #ffffff;
-    border: 1px solid transparent;
+    border: 1px solid #db4444;
     &:hover {
-      color: #000000;
-      background-color: #ffffff;
-      border-color: #7d8184;
+      background-color: #E07575;
+      border-color: #E07575;
     }
   }
   &.white {
@@ -21,9 +20,9 @@
     color: #000;
     border: 1px solid #7d8184;
     &:hover {
-      color: #ffffff;
-      background-color: #db4444;
-      border-color: transparent;
+      color: #7D8184;
+      // background-color: #db4444;
+      // border-color: transparent;
     }
   }
   &.green {

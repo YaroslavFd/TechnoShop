@@ -5,6 +5,15 @@
   align-items: center;
 }
 
-.forget-password:hover {
-  text-decoration: underline;
+.forget-password {
+  position: relative;
+}
+
+.forget-password:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #db4444;
+  bottom: 0;
 }
