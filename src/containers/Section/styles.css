@@ -27,3 +27,11 @@
     vertical-align: middle;
     margin-right: 16px;
 }
+
+.contact {
+  margin: 80px 0 180px;
+}
+
+.contact .section__title {
+  margin-bottom: 0;
+}

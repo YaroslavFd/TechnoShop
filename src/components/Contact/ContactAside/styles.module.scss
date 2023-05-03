@@ -1,0 +1,52 @@
+.contactUs {
+  width: 262px;
+}
+
+.callUs {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #7D8184;
+}
+.titleBox {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.iconBoxRed,
+.iconBoxBlack {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.iconBoxRed {
+  background-color: #DB4444;
+}
+
+.iconBoxBlack {
+  background-color: #3D3D3D;
+}
+
+.icon {
+  width: 20px;
+}
+
+.text {
+  margin-bottom: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.phoneLink,
+.emailLink {
+  color: #000000;
+}
