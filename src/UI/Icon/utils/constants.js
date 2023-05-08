@@ -29,4 +29,11 @@ export const MAP_PROPS_TO_ICON = {
   phoneWhite: './phone-white.svg',
   letterWhite: './letter-white.svg',
   trash: './card-trash.svg',
+  aboutDollar: './about-dollar.svg',
+  aboutHous: './about-hous.svg',
+  aboutBundle: './about-bundle.svg',
+  aboutBag: './about-bag.svg',
+  instaramBlack: './instaram_black.svg',
+  linkedinBlack: './linkedin_black.svg',
+  twitterBlack: './twitter_black.svg',
 };
