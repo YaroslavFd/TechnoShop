@@ -97,3 +97,9 @@ button:disabled {
 .mb-140 {
   margin-bottom: 140px;
 }
+
+.month-container {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}

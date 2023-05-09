@@ -4,7 +4,6 @@ import {
   removeFavorite,
 } from 'app/store/favorites/favoritesSlice';
 import Banner from 'components/Banner';
-import BestSelling from 'components/BestSelling';
 import { CATEGORIES } from 'components/CategoriesList/constants';
 import CategoryCard from 'components/CategoryCard';
 import LeftSitebar from 'components/LeftSitebar';
@@ -97,7 +96,7 @@ const HomePage = () => {
         subtitle="Best Selling Products"
         btnClick={() => {}}
       >
-        <BestSelling>
+        <div className="month-container">
           {PRODUCTS.map((product) => {
             const isFavorite = favorites.products.some(
               (fav) => fav.id === product.id
@@ -114,7 +113,7 @@ const HomePage = () => {
               );
             }
           })}
-        </BestSelling>
+        </div>
       </Section>
 
       <Section className="banner">
