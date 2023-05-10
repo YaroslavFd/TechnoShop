@@ -4,6 +4,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   height: 100vh;
   box-sizing: border-box;
@@ -16,9 +17,11 @@ button:disabled {
 }
 
 .container {
-  width: 1170px;
+  width: 1190px;
   max-width: 100%;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .wrapper {
