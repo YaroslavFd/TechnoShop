@@ -1,0 +1,158 @@
+.story {
+  margin-top: 42px;
+  margin-bottom: 140px;
+  height: 609px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 75px;
+  .storyBlock {
+    max-width: 525px;
+    .storyTitle {
+      margin-bottom: 40px;
+      font-weight: 600;
+      font-size: 54px;
+      line-height: 64px;
+    }
+    .storyText {
+      line-height: 24px;
+    }
+    .storyText:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  .storyPhoto {
+    position: relative;
+    height: 609px;
+    width: 837px;
+    .storyImg {
+      position: absolute;
+      min-width: 837px;
+      height: 100%;
+    }
+  }
+}
+
+.success {
+  margin-bottom: 140px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  .successBlock {
+    width: 270px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    &:hover {
+      color: #ffffff;
+      background-color: #db4444;
+      border: none;
+      .iconBox {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      .iconBoxSmall {
+        background-color: #ffffff;
+        .iconBoxImage {
+          path {
+            stroke: #000000;
+          }
+          // stroke: #000000;
+        }
+      }
+    }
+    .successCount {
+      margin-top: 24px;
+      margin-bottom: 12px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 30px;
+    }
+    .iconBox {
+      height: 80px;
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: rgba(47, 46, 48, 0.3);
+      .iconBoxImage {
+        path {
+          stroke: #ffffff;
+        }
+        width: 40px;
+      }
+    }
+    .iconBoxSmall {
+      height: 58px;
+      width: 58px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #000000;
+    }
+  }
+}
+
+.team {
+  position: relative;
+  margin-bottom: 196px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .teamBlock {
+    width: 370px;
+    .teamImage {
+      margin-bottom: 32px;
+    }
+    .teamName {
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 30px;
+    }
+    .teamPost {
+      margin-bottom: 16px;
+    }
+    .teamSocials {
+      display: flex;
+      gap: 16px;
+      .teamIcon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .dots {
+    position: absolute;
+    gap: 12px;
+    justify-content: center;
+    right: 0;
+    left: 0;
+    bottom: -55px;
+    display: flex;
+    align-items: center;
+  }
+
+  .dotsStyle {
+    height: 12px;
+    width: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .active {
+    width: 16px;
+    height: 16px;
+    background-color: #db4444;
+    border: 2px solid #ffffff;
+  }
+}

@@ -1,9 +1,10 @@
+import { About } from 'components/About';
 import { Section } from 'containers/Section';
 
 const AboutPage = () => {
   return (
-    <Section>
-      <h1>About page in develop</h1>
+    <Section className="mb-140">
+      <About />
     </Section>
   );
 };
