@@ -89,6 +89,33 @@ const HomePage = () => {
           <CategoryCard key={category.id} {...category} />
         ))}
       </ProductsSlider>
+
+      <Section
+        className="month mb-140"
+        title="Month"
+        subtitle="Best Selling Products"
+        btnClick={() => {}}
+      >
+        <div className="month-container">
+          {PRODUCTS.map((product) => {
+            const isFavorite = favorites.products.some(
+              (fav) => fav.id === product.id
+            );
+            if (product.isBest) {
+              return (
+                <ProductCard
+                  key={`product-${product.id}`}
+                  product={product}
+                  addToFavorites={addToFavoritesHandler}
+                  addToCart={addToCart}
+                  isFavorite={isFavorite}
+                />
+              );
+            }
+          })}
+        </div>
+      </Section>
+
       <Section className="banner">
         <Banner />
       </Section>
