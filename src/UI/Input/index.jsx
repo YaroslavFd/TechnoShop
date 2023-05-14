@@ -4,6 +4,7 @@ import './styles.css';
 
 const Input = ({
   name,
+  id,
   type,
   placeholder,
   required,
@@ -19,6 +20,7 @@ const Input = ({
         onChange={name.onChange}
         onBlur={name.onBlur}
         value={name.value}
+        id={id}
       />
       {name.error}
     </div>
