@@ -1,0 +1,85 @@
+.profile {
+  max-width: 870px;
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileTitle {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #DB4444;
+}
+
+.userdata {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.userdataLabel {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+
+  input {
+    width: 330px;
+    height: 50px;
+    margin-top: 8px;
+    padding-left: 16px;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+  }
+  
+}
+
+.password {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  input {
+    height: 50px;
+    border: none;
+    padding-left: 16px;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+  }
+}
+
+.passwordTitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  align-self: end;
+}
+
+.btnCancel {
+  width: auto !important;
+  height: auto !important;
+  background-color: transparent !important;
+  font-weight: 400;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btnSave {
+  margin-left: 32px;
+}

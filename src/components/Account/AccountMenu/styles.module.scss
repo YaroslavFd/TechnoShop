@@ -1,0 +1,25 @@
+.menuTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  text-decoration: none;
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.menuList {
+  padding-left: 30px;
+  list-style-type: none;
+}
+
+.menuLink {
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7D8184;
+  &:hover {
+    text-decoration: underline;
+  }
+}

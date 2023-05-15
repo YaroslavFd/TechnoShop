@@ -61,9 +61,9 @@ const HeaderMenu = () => {
                 <span className="product-counter">{productsCart.length}</span>
               )}
             </Link>
-            <a href="/#" className="header-menu__icons-user">
+            <Link className="header-menu__icons-user" to="/account">
               <img src="/img/icons/user.png" alt="user" />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="dropdown hidden">
