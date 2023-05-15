@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 const HomePage = lazy(() => import('./HomePage'));
 const LoginPage = lazy(() => import('./LoginPage'));
@@ -8,6 +8,7 @@ const ContactPage = lazy(() => import('./ContactPage'));
 const AboutPage = lazy(() => import('./AboutPage'));
 const CartPage = lazy(() => import('./CartPage'));
 const FavoritesPage = lazy(() => import('./FavoritesPage'));
+const NotFoundPage = lazy(() => import('./NotFoundPage'));
 const AccountPage = lazy(() => import('./AccountPage'));
 
 const Pages = () => {
@@ -22,6 +23,8 @@ const Pages = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/account" element={<AccountPage />} />
+        <Route path="*" element={<Navigate to="/404" replace />} />
+        <Route path="/404" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );

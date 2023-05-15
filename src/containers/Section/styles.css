@@ -43,3 +43,11 @@
 .account .section__title {
   margin-bottom: 0;
 }
+
+.not-found {
+  margin: 80px 0 140px;
+}
+
+.not-found .section__title {
+  margin-bottom: 0;
+}
