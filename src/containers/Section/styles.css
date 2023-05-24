@@ -51,3 +51,11 @@
 .not-found .section__title {
   margin-bottom: 0;
 }
+
+.checkout .section__title {
+  margin-bottom: 0
+}
+
+.checkout {
+  margin: 80px 0 140px;
+}

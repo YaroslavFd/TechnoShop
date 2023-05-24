@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import { Button } from 'UI/Button';
 import { formatter } from 'utils/currencyFormatter';
 
@@ -7,18 +9,29 @@ import './styles.css';
 
 const costShipping = 50;
 
-const CartTotal = ({ isCoupon, products }) => {
+const CartTotal = ({
+  isCoupon,
+  products,
+  title = 'Cart Total',
+  isBtn = true,
+}) => {
+  const navigate = useNavigate();
+
+  const handleNavigateClick = () => {
+    navigate('/checkout');
+  };
+
   const totalPrice = products.reduce((prev, curr) => {
     return prev + curr.totalPrice;
   }, 0);
 
-  const total = totalPrice < 300 ? totalPrice : totalPrice + costShipping;
+  const total = totalPrice > 300 ? totalPrice : totalPrice + costShipping;
 
   const priceWithCoupon = formatter.format(totalPrice * 0.8);
   return (
     <div className="cart__total">
-      <h3 className="cart__total-title">Cart Total</h3>
-      <div className="cart_-total-list">
+      <h3 className="cart__total-title">{title}</h3>
+      <div className="cart__total-list">
         <div className="cart__total-item cart__total-line">
           <p className="cart__total-text">Subtotal:</p>
           <div className="cart__total-price">
@@ -28,7 +41,7 @@ const CartTotal = ({ isCoupon, products }) => {
         <div className="cart__total-item cart__total-line">
           <p className="cart__total-text">Shipping:</p>
           <div className="cart__total-price">
-            {totalPrice < 300 ? 'Free' : formatter.format(costShipping)}
+            {totalPrice > 300 ? 'Free' : formatter.format(costShipping)}
           </div>
         </div>
         <div className="cart__total-item">
@@ -47,7 +60,11 @@ const CartTotal = ({ isCoupon, products }) => {
           </div>
         </div>
       </div>
-      <Button className="cart__total-button">Procees to checkout</Button>
+      {isBtn && (
+        <Button className="cart__total-button" onClick={handleNavigateClick}>
+          Procees to checkout
+        </Button>
+      )}
     </div>
   );
 };
