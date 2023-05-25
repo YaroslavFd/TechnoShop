@@ -5,6 +5,19 @@
   display: flex;
   flex-direction: column;
   row-gap: 32px;
+
+  :global {
+    .cart__total {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .cart__total-list {
+      margin: 0;
+    }
+    
+  }
 }
 
 .cartProducts {

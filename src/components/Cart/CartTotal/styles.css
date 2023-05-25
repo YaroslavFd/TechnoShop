@@ -47,13 +47,3 @@
   text-decoration: line-through;
   opacity: 0.7;
 }
-
-.checkout .cart__total {
-  padding: 0;
-  border: none;
-  border-radius: 0;
-}
-
-.checkout .cart__total-list {
-  margin: 0;
-}
