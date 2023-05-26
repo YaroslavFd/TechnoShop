@@ -1,0 +1,69 @@
+.cart {
+  max-width: 430px;
+  padding-top: 32px;
+  margin-right: 80px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+
+  :global {
+    .cart__total {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    .cart__total-list {
+      margin: 0;
+    }
+    
+  }
+}
+
+.cartProducts {
+  min-height: 54px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  p {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  img {
+    width: 50px;
+    margin-right: 20px;
+  }
+   span {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   }
+}
+
+.payBank {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  .cards {
+    display: flex;
+    gap: 8px;
+    img {
+      width: 42px;
+    }
+  }
+}
+
+.payCash {
+  display: flex;
+  align-items: center;
+}
+
+.btn{
+  align-self: flex-start;
+}

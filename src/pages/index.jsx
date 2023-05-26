@@ -10,6 +10,7 @@ const CartPage = lazy(() => import('./CartPage'));
 const FavoritesPage = lazy(() => import('./FavoritesPage'));
 const NotFoundPage = lazy(() => import('./NotFoundPage'));
 const AccountPage = lazy(() => import('./AccountPage'));
+const CheckOutPage = lazy(() => import('./CheckOutPage'));
 
 const Pages = () => {
   return (
@@ -23,6 +24,7 @@ const Pages = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/account" element={<AccountPage />} />
+        <Route path="/checkout" element={<CheckOutPage />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
         <Route path="/404" element={<NotFoundPage />} />
       </Routes>

@@ -1,0 +1,29 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #000000 !important;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    display: none;
+    
+    &:checked+span {
+      background-color: #DB4444;
+      border: 1px solid #DB4444;
+      color: #fff !important;
+    }
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #7F7F7F;
+    border-radius: 4px;
+    color: #000000 !important;
+  }
+}
