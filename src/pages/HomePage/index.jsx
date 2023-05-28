@@ -15,10 +15,12 @@ import Services from 'components/Services';
 import { Section } from 'containers/Section';
 import { PRODUCTS } from 'data/products';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const addToCart = (e) => {
     const id = Number(e.currentTarget.dataset.productId);
@@ -44,6 +46,11 @@ const HomePage = () => {
     } else {
       dispatch(removeFavorite({ id }));
     }
+  };
+
+  const viewDetails = (e) => {
+    const id = Number(e.currentTarget.dataset.productId);
+    navigate(`/product/${id}`);
   };
 
   return (
@@ -73,6 +80,7 @@ const HomePage = () => {
               addToFavorites={addToFavoritesHandler}
               addToCart={addToCart}
               isFavorite={isFavorite}
+              viewDetails={viewDetails}
             />
           );
         })}
@@ -109,6 +117,7 @@ const HomePage = () => {
                   addToFavorites={addToFavoritesHandler}
                   addToCart={addToCart}
                   isFavorite={isFavorite}
+                  viewDetails={viewDetails}
                 />
               );
             }

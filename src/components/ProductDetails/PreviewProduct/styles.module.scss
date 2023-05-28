@@ -1,0 +1,31 @@
+.imagesSmall {
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+
+  div {
+    width: 170px;
+    height: 138px;
+    display: flex;
+    background-color: #F5F5F5;
+    cursor: pointer;
+
+    img {
+      width: 121px;
+      margin: auto;
+    }
+  }
+}
+
+.imageBig {
+  min-width: 500px;
+  min-height: 600px;
+  margin-right: 70px;
+  display: flex;
+  background-color: #F5F5F5;
+  img {
+    width: 446px;
+    margin: auto;
+  }
+}

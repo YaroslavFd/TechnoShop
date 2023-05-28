@@ -15,6 +15,7 @@ const ProductCard = ({
   removeFromFavorites,
   addToCart,
   isFavorite,
+  viewDetails,
 }) => {
   return (
     <div className={styles.card}>
@@ -36,6 +37,7 @@ const ProductCard = ({
           className={cn(styles.boxBtn, styles.eyeBtn)}
           data-product-id={product.id}
           appearance="icon"
+          onClick={viewDetails}
         >
           <Icon name="eye" />
         </Button>
