@@ -1,13 +1,17 @@
 import styles from './styles.module.scss';
 
-const Checkbox = ({ children, value = '✔︎', size = 24 }) => {
+export const Checkbox = ({
+  children,
+  value = '✔︎',
+  type = 'checkbox',
+  name,
+  size = 24,
+}) => {
   return (
     <label className={styles.checkbox}>
-      <input type="checkbox" />
+      <input type={type} name={name} />
       <span style={{ width: size, height: size }}>{value}</span>
       {children}
     </label>
   );
 };
-
-export default Checkbox;

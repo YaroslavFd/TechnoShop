@@ -7,6 +7,7 @@ export const RadioBtn = (props) => {
     className = '',
     appearance = 'black',
     name = 'radioBtn',
+    type = 'radio',
     children,
     ...anotherProps
   } = props;
@@ -20,7 +21,7 @@ export const RadioBtn = (props) => {
       })}
       {...anotherProps}
     >
-      <input type="radio" name={name} />
+      <input type={type} name={name} />
       <span className={styles.radioBtn}>
         <span></span>
       </span>

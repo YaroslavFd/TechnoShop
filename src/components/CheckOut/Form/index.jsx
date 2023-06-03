@@ -1,4 +1,4 @@
-import Checkbox from 'UI/Checkbox';
+import { Checkbox } from 'UI/Checkbox';
 import Input from 'UI/Input';
 
 import styles from './styles.module.scss';
