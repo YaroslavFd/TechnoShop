@@ -6,6 +6,7 @@
   cursor: pointer;
   user-select: none;
 
+
   input {
     display: none;
     
@@ -13,6 +14,14 @@
       background-color: #DB4444;
       border: 1px solid #DB4444;
       color: #fff !important;
+    }
+  }
+
+  &.checkMark {
+    input {
+      &:checked+span::after {
+        content: '✔︎';
+      }
     }
   }
 

@@ -1,14 +1,22 @@
+import cn from 'classnames';
+
 import styles from './styles.module.scss';
 
 export const Checkbox = ({
   children,
-  value = '✔︎',
+  value = '',
+  className = '',
+  appearance = '',
   type = 'checkbox',
   name,
   size = 24,
 }) => {
   return (
-    <label className={styles.checkbox}>
+    <label
+      className={cn(styles.checkbox, className, {
+        [styles.checkMark]: appearance === 'checkMark',
+      })}
+    >
       <input type={type} name={name} />
       <span style={{ width: size, height: size }}>{value}</span>
       {children}

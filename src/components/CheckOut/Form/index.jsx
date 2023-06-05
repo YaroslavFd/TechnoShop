@@ -81,7 +81,9 @@ export const Form = () => {
         />
       </label>
 
-      <Checkbox>Save this information for faster check-out next time</Checkbox>
+      <Checkbox appearance="checkMark">
+        Save this information for faster check-out next time
+      </Checkbox>
     </form>
   );
 };
