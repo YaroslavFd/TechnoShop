@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 
 export const ProductDetails = () => {
   const { id } = useParams();
-  const { title } = PRODUCTS.find((p) => Number(p.id) === Number(id));
+  const { title, price } = PRODUCTS.find((p) => Number(p.id) === Number(id));
   return (
     <>
       <Breadcrumbs
@@ -22,7 +22,7 @@ export const ProductDetails = () => {
 
       <div className={styles.block}>
         <PreviewProduct />
-        <Details title={title} />
+        <Details title={title} price={price} />
       </div>
     </>
   );

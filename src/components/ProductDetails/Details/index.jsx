@@ -1,10 +1,11 @@
 import { Button } from 'UI/Button';
 import { Checkbox } from 'UI/Checkbox';
 import { RadioBtn } from 'UI/RadioBtn';
+import { formatter } from 'utils/currencyFormatter';
 
 import styles from './styles.module.scss';
 
-export const Details = ({ title }) => {
+export const Details = ({ title, price }) => {
   return (
     <div className={styles.info}>
       <h2>{title}</h2>
@@ -85,9 +86,7 @@ export const Details = ({ title }) => {
         </div>
         <div className={styles.status}>In Stock</div>
       </div>
-      <div className={styles.price}>
-        <span>$</span>192.00
-      </div>
+      <div className={styles.price}>{formatter.format(price)}</div>
       <div className={styles.text}>
         PlayStation 5 Controller Skin High quality vinyl with air channel
         adhesive for easy bubble free install &amp; mess free removal Pressure
