@@ -144,17 +144,21 @@
     }
 
     .btnWhite {
+      cursor: pointer;
       padding: 0;
       width: 40px;
       height: 40px;
       display: flex;
       background-color: #ffffff;
       border: 1px solid #7D8184;
+      border-radius: 4px;
+      color: #000;
       transition: all 0.3s ease;
 
       &:hover {
         border: 1px solid #db4444;
         background-color: #db4444;
+        color: #7D8184;
 
         svg {
           stroke: #fff;
@@ -165,6 +169,15 @@
         width: 20px;
         margin: auto;
         stroke: #000000;
+      }
+      &.active {
+        border: 1px solid #db4444;
+        background-color: #db4444;
+        color: #7D8184;
+
+        svg {
+          stroke: #fff;
+        }
       }
     }
   }

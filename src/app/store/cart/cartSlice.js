@@ -68,6 +68,24 @@ const cartSlice = createSlice({
         state.products.push(product);
       }
     },
+
+    addManyProducts: (state, action) => {
+      const { product, quantity } = action.payload;
+
+      const index = state.products.findIndex((item) => item.id === product.id);
+      if (index >= 0) {
+        state.products[index].count += quantity;
+        state.products[index].totalPrice =
+          state.products[index].count * state.products[index].price;
+      } else {
+        const newProduct = {
+          ...product,
+          count: quantity,
+          totalPrice: quantity * product.price,
+        };
+        state.products.push(newProduct);
+      }
+    },
   },
 });
 
@@ -78,6 +96,7 @@ export const {
   changeValue,
   setIsCoupon,
   addProduct,
+  addManyProducts,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

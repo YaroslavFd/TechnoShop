@@ -1,3 +1,11 @@
+import { addManyProducts } from 'app/store/cart/cartSlice';
+import {
+  addFavorite,
+  removeFavorite,
+} from 'app/store/favorites/favoritesSlice';
+import cn from 'classnames';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'UI/Button';
 import { Checkbox } from 'UI/Checkbox';
 import { RadioBtn } from 'UI/RadioBtn';
@@ -5,10 +13,34 @@ import { formatter } from 'utils/currencyFormatter';
 
 import styles from './styles.module.scss';
 
-export const Details = ({ title, price }) => {
+export const Details = ({ product }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites);
+  const isFavorite = favorites.products.some((fav) => fav.id === product.id);
+
+  const [count, setCount] = useState(1);
+
+  const addProductHandler = () => {
+    dispatch(addManyProducts({ product, quantity: count }));
+
+    setCount(1);
+  };
+
+  const incrementHandler = () => {
+    if (count >= 100) return;
+
+    setCount((prev) => prev + 1);
+  };
+
+  const decrementHandler = () => {
+    if (count <= 1) return;
+
+    setCount((prev) => prev - 1);
+  };
+
   return (
     <div className={styles.info}>
-      <h2>{title}</h2>
+      <h2>{product.title}</h2>
       <div className={styles.rating}>
         <div className={styles.ratingBox}>
           <svg
@@ -86,7 +118,7 @@ export const Details = ({ title, price }) => {
         </div>
         <div className={styles.status}>In Stock</div>
       </div>
-      <div className={styles.price}>{formatter.format(price)}</div>
+      <div className={styles.price}>{formatter.format(product.price)}</div>
       <div className={styles.text}>
         PlayStation 5 Controller Skin High quality vinyl with air channel
         adhesive for easy bubble free install &amp; mess free removal Pressure
@@ -109,12 +141,30 @@ export const Details = ({ title, price }) => {
       </div>
       <div className={styles.buy}>
         <div className={styles.counter}>
-          <button className={styles.btnLeft}>-</button>
-          <span>2</span>
-          <button className={styles.btnRight}>+</button>
+          <button className={styles.btnLeft} onClick={() => decrementHandler()}>
+            -
+          </button>
+          <span>{count}</span>
+          <button
+            className={styles.btnRight}
+            onClick={() => incrementHandler()}
+          >
+            +
+          </button>
         </div>
-        <Button className={styles.btnRed}>Buy Now</Button>
-        <Button className={styles.btnWhite} appearance="white">
+        <Button className={styles.btnRed} onClick={() => addProductHandler()}>
+          Buy Now
+        </Button>
+        <button
+          className={cn(styles.btnWhite, {
+            [styles.active]: isFavorite,
+          })}
+          onClick={() =>
+            isFavorite
+              ? dispatch(removeFavorite(product))
+              : dispatch(addFavorite(product))
+          }
+        >
           <svg
             viewBox="0 0 18 16"
             fill="none"
@@ -127,7 +177,7 @@ export const Details = ({ title, price }) => {
               strokeLinejoin="round"
             ></path>
           </svg>
-        </Button>
+        </button>
       </div>
       <div className={styles.delivery}>
         <div className={styles.deliveryFree}>
