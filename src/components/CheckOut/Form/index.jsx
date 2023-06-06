@@ -1,20 +1,45 @@
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
 import { Checkbox } from 'UI/Checkbox';
 import Input from 'UI/Input';
+
+import schemaValidation from 'utils/schemaValidation';
 
 import styles from './styles.module.scss';
 
 export const Form = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm({
+    resolver: yupResolver(schemaValidation),
+    mode: 'onBlur',
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+  };
+
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="firstName">
         First Name<span>*</span>
         <Input
           inputClass={'input__grey'}
           id="firstName"
           type={'text'}
-          name="FirstName"
+          name="firstName"
           required
+          validation={{ ...register('firstName') }}
         />
+        {errors?.firstName && (
+          <div className={styles.error}>
+            {errors?.firstName.message || 'Error!'}
+          </div>
+        )}
       </label>
 
       <label htmlFor="companyName">
@@ -24,7 +49,13 @@ export const Form = () => {
           id="companyName"
           type={'text'}
           name="companyName"
+          validation={{ ...register('companyName') }}
         />
+        {errors?.companyName && (
+          <div className={styles.error}>
+            {errors?.companyName.message || 'Error!'}
+          </div>
+        )}
       </label>
 
       <label htmlFor="address">
@@ -33,9 +64,15 @@ export const Form = () => {
           inputClass={'input__grey'}
           id="address"
           type={'text'}
-          name="streetAddress"
+          name="address"
           required
+          validation={{ ...register('address') }}
         />
+        {errors?.address && (
+          <div className={styles.error}>
+            {errors?.address.message || 'Error!'}
+          </div>
+        )}
       </label>
 
       <label htmlFor="apartment">
@@ -45,7 +82,13 @@ export const Form = () => {
           id="apartment"
           type={'text'}
           name="apartment"
+          validation={{ ...register('apartment') }}
         />
+        {errors?.apartment && (
+          <div className={styles.error}>
+            {errors?.apartment.message || 'Error!'}
+          </div>
+        )}
       </label>
 
       <label htmlFor="city">
@@ -56,7 +99,11 @@ export const Form = () => {
           type={'text'}
           name="city"
           required
+          validation={{ ...register('city') }}
         />
+        {errors?.city && (
+          <div className={styles.error}>{errors?.city.message || 'Error!'}</div>
+        )}
       </label>
 
       <label htmlFor="tel">
@@ -67,7 +114,11 @@ export const Form = () => {
           type={'tel'}
           name="tel"
           required
+          validation={{ ...register('tel') }}
         />
+        {errors?.tel && (
+          <div className={styles.error}>{errors?.tel.message || 'Error!'}</div>
+        )}
       </label>
 
       <label htmlFor="email">
@@ -78,7 +129,13 @@ export const Form = () => {
           type={'email'}
           name="email"
           required
+          validation={{ ...register('email') }}
         />
+        {errors?.email && (
+          <div className={styles.error}>
+            {errors?.email.message || 'Error!'}
+          </div>
+        )}
       </label>
 
       <Checkbox appearance="checkMark">
