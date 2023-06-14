@@ -1,5 +1,7 @@
+import { addProduct } from 'app/store/cart/cartSlice';
 import { removeFavorite } from 'app/store/favorites/favoritesSlice';
 import ProductCard from 'components/ProductCard';
+import ProductsSlider from 'components/ProductsSlider';
 import { Section } from 'containers/Section';
 import { useDispatch, useSelector } from 'react-redux';
 import { Typography } from 'UI/Typography';
@@ -20,13 +22,23 @@ const FavoritesPage = () => {
         {products.length === 0 ? (
           <h1>В избранном ничего нет</h1>
         ) : (
-          products.map((product) => (
-            <ProductCard
-              key={`product-${product.id}`}
-              product={product}
-              removeFromFavorites={removeFromFavoritesHandler}
-            />
-          ))
+          <ProductsSlider
+            length={products.length}
+            viewItems={4}
+            type="products"
+            className="favorites-slider"
+          >
+            {products.map((product) => (
+              <ProductCard
+                key={`product-${product.id}`}
+                product={product}
+                removeFromFavorites={removeFromFavoritesHandler}
+                addToCart={() => dispatch(addProduct(product))}
+                viewBtn={false}
+                withRating={false}
+              />
+            ))}
+          </ProductsSlider>
         )}
       </div>
     </Section>

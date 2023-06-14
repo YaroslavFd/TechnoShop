@@ -61,8 +61,7 @@
 }
 
 .product {
-  margin-top: 80px;
-  margin-bottom: 140px;
+  margin: 80px 0 140px;
 }
 
 .product .product__container {
@@ -72,4 +71,15 @@
 
 .product .section__title {
   margin-bottom: 0;
+}
+
+.favorites {
+  margin: 80px 0 140px;
+}
+.favorites .section__title {
+  margin-bottom: 0px
+}
+
+.favorites-slider .section__title {
+  margin-bottom: 40px;
 }

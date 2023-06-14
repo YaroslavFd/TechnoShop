@@ -9,20 +9,20 @@ import styles from './styles.module.scss';
 
 export const ProductDetails = () => {
   const { id } = useParams();
-  const { title, price } = PRODUCTS.find((p) => Number(p.id) === Number(id));
+  const product = PRODUCTS.find((p) => Number(p.id) === Number(id));
   return (
     <>
       <Breadcrumbs
         items={[
           { name: 'Account', src: '/account' },
           { name: 'Gaming', src: '/' },
-          { name: `${title}`, src: `/product/${id}` },
+          { name: `${product.title}`, src: `/product/${id}` },
         ]}
       />
 
       <div className={styles.block}>
         <PreviewProduct />
-        <Details title={title} price={price} />
+        <Details product={product} />
       </div>
     </>
   );

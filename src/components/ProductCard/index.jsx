@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { Button } from 'UI/Button';
@@ -16,6 +16,8 @@ const ProductCard = ({
   addToCart,
   isFavorite,
   viewDetails,
+  viewBtn = true,
+  withRating = true,
 }) => {
   return (
     <div className={styles.card}>
@@ -33,14 +35,16 @@ const ProductCard = ({
             isActive={isFavorite}
           />
         </Button>
-        <Button
-          className={cn(styles.boxBtn, styles.eyeBtn)}
-          data-product-id={product.id}
-          appearance="icon"
-          onClick={viewDetails}
-        >
-          <Icon name="eye" />
-        </Button>
+        {viewBtn && (
+          <Button
+            className={cn(styles.boxBtn, styles.eyeBtn)}
+            data-product-id={product.id}
+            appearance="icon"
+            onClick={viewDetails}
+          >
+            <Icon name="eye" />
+          </Button>
+        )}
         <Button
           className={styles.addToCartBtn}
           data-product-id={product.id}
@@ -60,7 +64,7 @@ const ProductCard = ({
           ${product.price * (1 + product.discount / 100)}
         </span>
       </p>
-      <ProductRating />
+      {withRating && <ProductRating />}
     </div>
   );
 };
