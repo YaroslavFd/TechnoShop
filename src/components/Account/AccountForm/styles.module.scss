@@ -3,6 +3,11 @@
   padding: 40px 80px;
   display: flex;
   flex-direction: column;
+  
+  .error {
+    color: #e53e3e;
+    margin-top: 10px;
+  }
 }
 
 .profileTitle {

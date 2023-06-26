@@ -21,7 +21,7 @@ export const Details = ({ product }) => {
   const [count, setCount] = useState(1);
 
   const addProductHandler = () => {
-    dispatch(addManyProducts({ product, quantity: count }));
+    dispatch(addManyProducts({ product, count }));
 
     setCount(1);
   };
@@ -152,7 +152,7 @@ export const Details = ({ product }) => {
             +
           </button>
         </div>
-        <Button className={styles.btnRed} onClick={() => addProductHandler()}>
+        <Button className={styles.btnRed} onClick={addProductHandler}>
           Buy Now
         </Button>
         <button

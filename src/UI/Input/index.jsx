@@ -8,6 +8,7 @@ const Input = ({
   type,
   placeholder,
   required,
+  validation,
   inputClass = 'input__field',
 }) => {
   return (
@@ -21,6 +22,7 @@ const Input = ({
         onBlur={name.onBlur}
         value={name.value}
         id={id}
+        {...validation}
       />
       {name.error}
     </div>
