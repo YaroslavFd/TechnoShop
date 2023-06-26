@@ -93,4 +93,48 @@
   .cartIcon {
     margin-right: 8px;
   }
+
+  .counter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    color: #fff;
+    height: 40px;
+    display: flex;
+
+    span {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+      button {
+        width: 120px;
+        font-size: 28px;
+        color: #fff;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        transition: 0.2s ease-out;
+
+        &:hover {
+          background-color: #DB4444;
+          border-color: #DB4444;
+          color: #ffffff;
+        }
+      }
+
+      .btnLeft {
+        border-right: 1px solid #7D8184;
+      }
+      .btnRight {
+        border-left: 1px solid #7D8184;
+      }
+  }
 }

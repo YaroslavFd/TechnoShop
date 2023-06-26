@@ -16,11 +16,19 @@ import styles from './styles.module.scss';
 export const Details = ({ product }) => {
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.favorites);
+  const productInCart = useSelector((state) => state.cart.products).find(
+    (item) => item.id === product.id
+  );
   const isFavorite = favorites.products.some((fav) => fav.id === product.id);
 
   const [count, setCount] = useState(1);
 
   const addProductHandler = () => {
+    if (productInCart && productInCart.count + count > 100) {
+      setCount(1);
+      return;
+    }
+
     dispatch(addManyProducts({ product, count }));
 
     setCount(1);
@@ -152,8 +160,13 @@ export const Details = ({ product }) => {
             +
           </button>
         </div>
-        <Button className={styles.btnRed} onClick={addProductHandler}>
-          Buy Now
+        <Button
+          className={styles.btnRed}
+          onClick={addProductHandler}
+          disabled={productInCart && productInCart.count >= 100}
+        >
+          Buy now
+          {productInCart && <span>{productInCart.count}</span>}
         </Button>
         <button
           className={cn(styles.btnWhite, {

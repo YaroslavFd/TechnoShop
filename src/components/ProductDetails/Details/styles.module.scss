@@ -139,8 +139,24 @@
     }
 
     .btnRed {
+      position: relative;
       height: 44px;
       padding: 10px 48px;
+      span {
+        position: absolute;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #db4444;
+        font-size: 13px;
+        width: 26px;
+        height: 26px;
+        border-radius: 100%;
+        right: 10px;
+      }
     }
 
     .btnWhite {
