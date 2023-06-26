@@ -47,6 +47,19 @@ const schemaValidation = yup.object().shape({
     .string()
     .required('Confirm New Password is required')
     .oneOf([yup.ref('newPassword'), null], 'Passwords must match'),
+  userLogin: yup
+    .string()
+    .required('This field is required!')
+    .test(
+      'is-login-valid',
+      'Invalid login. Please enter a valid phone number or email.',
+      function (value) {
+        const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
+        const emailRegex =
+          /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+        return phoneRegex.test(value) || emailRegex.test(value) ? true : false;
+      }
+    ),
 });
 
 export default schemaValidation;

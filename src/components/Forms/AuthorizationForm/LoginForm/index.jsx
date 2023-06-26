@@ -1,38 +1,57 @@
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
+import schemaValidation from 'schemas/schemaValidation';
 import { Button } from 'UI/Button';
 import Input from 'UI/Input';
 
 import AuthorizationForm from '..';
-import { useInput } from '../useInput';
 
 import './styles.css';
 
 const LoginForm = () => {
-  const email = useInput('', { isEmpty: true, minLength: 3, isEmail: true });
-  const password = useInput('', { isEmpty: true, minLength: 5, maxLength: 10 });
+  const {
+    register,
+    formState: { errors, isValid },
+    handleSubmit,
+    reset,
+  } = useForm({
+    resolver: yupResolver(schemaValidation),
+    mode: 'onBlur',
+  });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    reset();
+  };
 
   return (
     <AuthorizationForm
       title="Log in to Exclusive"
       subtitle="Enter your details below"
+      handleSubmit={(e) => handleSubmit(onSubmit(e))}
     >
       <Input
-        name={email}
         type="text"
         placeholder="Email or Phone Number"
-        required={true}
+        name="userLogin"
+        required
+        validation={{ ...register('userLogin') }}
       />
+      {errors?.userLogin && (
+        <div className="error">{errors?.userLogin.message || 'Error!'}</div>
+      )}
       <Input
-        name={password}
         type="password"
         placeholder="Password"
-        required={true}
+        name="password"
+        required
+        validation={{ ...register('password') }}
       />
+      {errors?.password && (
+        <div className="error">{errors?.password.message || 'Error!'}</div>
+      )}
       <div className="login__buttons">
-        <Button
-          type="button"
-          appearance="red"
-          disabled={!email.inputValid || !password.inputValid}
-        >
+        <Button type="submit" appearance="red" disabled={!isValid}>
           Log in
         </Button>
         <a href="/#" className="forget-password text-red">

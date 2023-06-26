@@ -1,9 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import schemaValidation from 'schemas/schemaValidation';
 import { Button } from 'UI/Button';
 import Input from 'UI/Input';
-
-import schemaValidation from 'utils/schemaValidation';
 
 import styles from './styles.module.scss';
 
@@ -18,10 +17,7 @@ const AccountForm = () => {
     mode: 'onBlur',
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
+  const onSubmit = () => {};
   return (
     <form className={styles.profile} onSubmit={handleSubmit(onSubmit)}>
       <h3 className={styles.profileTitle}>Edit Your Profile</h3>

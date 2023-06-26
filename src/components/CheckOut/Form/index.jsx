@@ -1,9 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import schemaValidation from 'schemas/schemaValidation';
 import { Checkbox } from 'UI/Checkbox';
 import Input from 'UI/Input';
-
-import schemaValidation from 'utils/schemaValidation';
 
 import styles from './styles.module.scss';
 
