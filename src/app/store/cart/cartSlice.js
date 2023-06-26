@@ -70,18 +70,18 @@ const cartSlice = createSlice({
     },
 
     addManyProducts: (state, action) => {
-      const { product, quantity } = action.payload;
+      const { product, count } = action.payload;
 
       const index = state.products.findIndex((item) => item.id === product.id);
       if (index >= 0) {
-        state.products[index].count += quantity;
+        state.products[index].count += count;
         state.products[index].totalPrice =
           state.products[index].count * state.products[index].price;
       } else {
         const newProduct = {
           ...product,
-          count: quantity,
-          totalPrice: quantity * product.price,
+          count,
+          totalPrice: count * product.price,
         };
         state.products.push(newProduct);
       }

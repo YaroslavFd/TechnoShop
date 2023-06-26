@@ -18,8 +18,7 @@ export const Form = () => {
     mode: 'onBlur',
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = () => {
     reset();
   };
 
