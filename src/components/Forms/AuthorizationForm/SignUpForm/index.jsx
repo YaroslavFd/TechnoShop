@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import schemaValidation from 'schemas/schemaValidation';
+import signUpSchemaValidation from 'schemas/signUpSchemaValidation';
 import { Button } from 'UI/Button';
 import Input from 'UI/Input';
 
@@ -16,7 +16,7 @@ const SignUpForm = () => {
     handleSubmit,
     reset,
   } = useForm({
-    resolver: yupResolver(schemaValidation),
+    resolver: yupResolver(signUpSchemaValidation),
     mode: 'onBlur',
   });
 
@@ -34,12 +34,12 @@ const SignUpForm = () => {
       <Input
         type="text"
         placeholder="Name"
-        name="firstName"
+        name="userName"
         required
-        validation={{ ...register('firstName') }}
+        validation={{ ...register('userName') }}
       />
-      {errors?.firstName && (
-        <div className="error">{errors?.firstName.message || 'Error!'}</div>
+      {errors?.userName && (
+        <div className="error">{errors?.userName.message || 'Error!'}</div>
       )}
       <Input
         type="text"
@@ -54,12 +54,12 @@ const SignUpForm = () => {
       <Input
         type="password"
         placeholder="Password"
-        name="newPassword"
+        name="password"
         required
-        validation={{ ...register('newPassword') }}
+        validation={{ ...register('password') }}
       />
-      {errors?.newPassword && (
-        <div className="error">{errors?.newPassword.message || 'Error!'}</div>
+      {errors?.password && (
+        <div className="error">{errors?.password.message || 'Error!'}</div>
       )}
       <div className="signup__buttons">
         <Button type="submit" appearance="red" disabled={!isValid}>

@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import schemaValidation from 'schemas/schemaValidation';
+import loginSchemaValidation from 'schemas/loginSchemaValidation';
 import { Button } from 'UI/Button';
 import Input from 'UI/Input';
 
@@ -15,7 +15,7 @@ const LoginForm = () => {
     handleSubmit,
     reset,
   } = useForm({
-    resolver: yupResolver(schemaValidation),
+    resolver: yupResolver(loginSchemaValidation),
     mode: 'onBlur',
   });
 
