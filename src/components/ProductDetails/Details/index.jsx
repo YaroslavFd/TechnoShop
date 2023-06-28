@@ -1,11 +1,16 @@
-import { addManyProducts } from 'app/store/cart/cartSlice';
+import {
+  addProduct,
+  decrease,
+  deleteProduct,
+  increase,
+} from 'app/store/cart/cartSlice';
 import {
   addFavorite,
   removeFavorite,
 } from 'app/store/favorites/favoritesSlice';
 import cn from 'classnames';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'UI/Button';
 import { Checkbox } from 'UI/Checkbox';
 import { RadioBtn } from 'UI/RadioBtn';
@@ -15,35 +20,34 @@ import styles from './styles.module.scss';
 
 export const Details = ({ product }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const favorites = useSelector((state) => state.favorites);
   const productInCart = useSelector((state) => state.cart.products).find(
     (item) => item.id === product.id
   );
   const isFavorite = favorites.products.some((fav) => fav.id === product.id);
 
-  const [count, setCount] = useState(1);
-
-  const addProductHandler = () => {
-    if (productInCart && productInCart.count + count > 100) {
-      setCount(1);
-      return;
-    }
-
-    dispatch(addManyProducts({ product, count }));
-
-    setCount(1);
-  };
+  const count = productInCart ? productInCart.count : 0;
 
   const incrementHandler = () => {
-    if (count >= 100) return;
-
-    setCount((prev) => prev + 1);
+    if (productInCart) {
+      dispatch(increase(product.id));
+    } else {
+      dispatch(addProduct(product));
+    }
   };
 
   const decrementHandler = () => {
-    if (count <= 1) return;
+    if (count > 0) {
+      dispatch(decrease(product.id));
+    }
+    if (count - 1 === 0) {
+      dispatch(deleteProduct(product.id));
+    }
+  };
 
-    setCount((prev) => prev - 1);
+  const handleClickBuy = () => {
+    navigate('/cart');
   };
 
   return (
@@ -162,11 +166,10 @@ export const Details = ({ product }) => {
         </div>
         <Button
           className={styles.btnRed}
-          onClick={addProductHandler}
-          disabled={productInCart && productInCart.count >= 100}
+          disabled={count === 0}
+          onClick={handleClickBuy}
         >
           Buy now
-          {productInCart && <span>{productInCart.count}</span>}
         </Button>
         <button
           className={cn(styles.btnWhite, {
