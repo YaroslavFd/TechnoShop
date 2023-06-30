@@ -1,29 +1,31 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import accountSchemaValidation from 'schemas/accountSchemaValidation';
 import { Button } from 'UI/Button';
 import Input from 'UI/Input';
-
-import schemaValidation from 'utils/schemaValidation';
 
 import styles from './styles.module.scss';
 
 const AccountForm = () => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
     reset,
   } = useForm({
-    resolver: yupResolver(schemaValidation),
+    resolver: yupResolver(accountSchemaValidation),
     mode: 'onBlur',
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    reset();
   };
-
   return (
-    <form className={styles.profile} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className={styles.profile}
+      onSubmit={(e) => handleSubmit(onSubmit(e))}
+    >
       <h3 className={styles.profileTitle}>Edit Your Profile</h3>
       <div className={styles.userdata}>
         <label className={styles.userdataLabel} htmlFor="firstName">
@@ -127,13 +129,19 @@ const AccountForm = () => {
           type={'password'}
           name="confirmNewPassword"
           placeholder={'Confirm New Password'}
+          validation={{ ...register('confirmNewPassword') }}
         />
+        {errors?.confirmNewPassword && (
+          <div className={styles.error}>
+            {errors?.confirmNewPassword.message || 'Error!'}
+          </div>
+        )}
       </div>
       <div className={styles.buttons}>
         <Button className={styles.btnCancel} appearance="icon">
           Cancel
         </Button>
-        <Button className={styles.btnSave} type="submit">
+        <Button className={styles.btnSave} type="submit" disabled={!isValid}>
           Save Changes
         </Button>
       </div>
