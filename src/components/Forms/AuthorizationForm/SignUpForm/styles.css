@@ -35,7 +35,6 @@
 .signup__buttons {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
   width: 100%;
 }
 .button__google {

@@ -1,42 +1,42 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import contactSchemaValidation from 'schemas/contactShemaValidation';
 import { Button } from 'UI/Button';
 import Input from 'UI/Input';
-
-import schemaValidation from 'utils/schemaValidation';
 
 import styles from './styles.module.scss';
 
 const ContactForm = () => {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
     reset,
   } = useForm({
-    resolver: yupResolver(schemaValidation),
+    resolver: yupResolver(contactSchemaValidation),
     mode: 'onBlur',
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (e) => {
+    e.preventDefault();
     reset();
   };
+
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.form} onSubmit={(e) => handleSubmit(onSubmit(e))}>
       <div className={styles.inputs}>
         <div>
           <Input
             inputClass={'input__grey'}
-            type={'email'}
-            name="firstName"
+            type={'text'}
+            name="name"
             placeholder={'Your Name'}
             required
-            validation={{ ...register('firstName') }}
+            validation={{ ...register('name') }}
           />
-          {errors?.firstName && (
+          {errors?.name && (
             <div className={styles.error}>
-              {errors?.firstName.message || 'Error!'}
+              {errors?.name.message || 'Error!'}
             </div>
           )}
         </div>
@@ -77,7 +77,9 @@ const ContactForm = () => {
         placeholder="Your Message"
         name="message"
       ></textarea>
-      <Button className={styles.btn}>Send Message</Button>
+      <Button className={styles.btn} type="submit" disabled={!isValid}>
+        Send Message
+      </Button>
     </form>
   );
 };

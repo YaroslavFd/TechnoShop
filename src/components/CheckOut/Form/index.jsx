@@ -1,9 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import checkOutSchemaValidation from 'schemas/checkOutSchemaValidation';
 import { Checkbox } from 'UI/Checkbox';
 import Input from 'UI/Input';
-
-import schemaValidation from 'utils/schemaValidation';
 
 import styles from './styles.module.scss';
 
@@ -14,16 +13,17 @@ export const Form = () => {
     handleSubmit,
     reset,
   } = useForm({
-    resolver: yupResolver(schemaValidation),
+    resolver: yupResolver(checkOutSchemaValidation),
     mode: 'onBlur',
   });
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     reset();
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form className={styles.form} onSubmit={(e) => handleSubmit(onSubmit(e))}>
       <label htmlFor="firstName">
         First Name<span>*</span>
         <Input
